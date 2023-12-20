@@ -5,7 +5,7 @@ import { faBell, faCircleUser, faEnvelope, faSearch } from '@fortawesome/free-so
 
 function Header() {
   return (
-    <div className='header'>
+    <div className='header mx-5'>
         <div className="me-auto">
             <div><FontAwesomeIcon icon={faSearch}/></div> 
         </div>
