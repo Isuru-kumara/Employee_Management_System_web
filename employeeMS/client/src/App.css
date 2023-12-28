@@ -1,6 +1,6 @@
 .grid-container {
   display: grid;
-  grid-template-columns: 260px 1fr 1fr 1fr;
+  grid-template-columns: 270px 1fr 1fr 1fr;
   grid-template-rows: 0.2fr 3fr;
   grid-template-areas: 
       'sidebar header header header'
@@ -22,14 +22,25 @@
 }
 
 .sidebar {
-  margin: 15px;
-  padding-left: 30px;
   grid-area: sidebar;
+  margin: 15px;
+  padding-left: 0px;  
   height: 100%;
   border-radius: 15px;
   background-color: white;
   box-shadow: 0 6px 7px 5px rgba(0, 0, 0, 0.35);
-  overflow-y: auto;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.dashboard {
+  grid-area: main;
+  margin: 15px;
+  padding-left: 30px;    
+  height: 100%;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0 6px 7px 5px rgba(0, 0, 0, 0.35);
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
 }
