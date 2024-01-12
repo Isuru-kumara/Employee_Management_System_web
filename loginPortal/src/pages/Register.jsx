@@ -3,9 +3,9 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Row, Col, Container } from "react-bootstrap";
 import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
-function Login() {
+function Register() {
   return (
     <div className='login'>
         <Container className='justify-content-center'>
@@ -17,8 +17,15 @@ function Login() {
                             <h5 className='text-light'>Astray Apps Pvt. Ltd</h5>
                         </Card.Header>
                         <Card.Body className='p-4 text-center bg-light'>
-                            <h4>Sign In</h4>                            
+                            <h4>Sign Up</h4>                            
                             <Form className='px-5 pt-3'>
+                                <Form.Group className="mb-3" controlId="formBasicName">
+                                    <div className="justify-content-start align-items-center">
+                                      <div style={{ textAlign: 'left', marginRight: '10px', padding: '5px' }}>Name</div>
+                                      <Form.Control type="Name" placeholder="Enter your Name" />
+                                    </div>
+                                </Form.Group>
+
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <div className="justify-content-start align-items-center">
                                       <div style={{ textAlign: 'left', marginRight: '10px', padding: '5px' }}>Email address</div>
@@ -40,11 +47,11 @@ function Login() {
                                     <Form.Check type="checkbox" label="Save details" style={{ textAlign: 'left' }} />
                                 </Form.Group>
 
-                                <Button variant="primary" type="submit" style={{ width: '100%' }}>Login</Button>
+                                <Button variant="primary" type="submit" style={{ width: '100%' }}>Register</Button>
                             </Form>
                         </Card.Body>
                         <Card.Footer className="text-center">
-                            {/* <p>Don't have an account? <Link to="./pages/register">Sign Up</Link>.</p> */}
+                            <p>Already have an account? <Link to="./pages/login">Sign In</Link>.</p>
                         </Card.Footer>
                         
                     </Card>
@@ -55,4 +62,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;
