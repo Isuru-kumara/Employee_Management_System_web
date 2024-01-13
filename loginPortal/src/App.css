@@ -1,0 +1,36 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 600px 1fr;
+  grid-template-rows: 0.2fr 3fr;
+  grid-template-areas: 
+      'sidebar login header'
+      'sidebar login main';
+  height: 95vh;
+}
+
+.login {
+  margin: 25px;
+  grid-area: login;
+  height: 95%;
+  border-radius: 25px;
+  background-color: white;
+}
+
+.rowCard {
+  display: flex;
+  flex-direction: row;
+  justify-content:start;
+  padding: 20px 0px 0px 90px;
+  font-size: 18px;
+}
+
+.card {
+  border-radius: 25px;
+}
+
+.columnCard {
+  
+  justify-content:space-between;
+  
+}
+
