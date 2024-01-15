@@ -11,8 +11,7 @@
 .login {
   margin: 25px;
   grid-area: login;
-  height: 95%;
-  border-radius: 25px;
+  height: 125%;
   background-color: white;
 }
 
@@ -25,12 +24,7 @@
 }
 
 .card {
-  border-radius: 25px;
+  border-radius: 15px;
 }
 
-.columnCard {
-  
-  justify-content:space-between;
-  
-}
 

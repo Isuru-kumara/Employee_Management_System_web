@@ -1,11 +1,17 @@
 import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Login from './pages/Login';
+import Login from './pages/login'
+import Register from './pages/Register'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
     <div className='grid-container'>   
-      <Login/>      
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }
