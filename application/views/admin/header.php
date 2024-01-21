@@ -34,11 +34,11 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="#" class="logo">
+    <a href="./dashboard.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <!-- logo for regular state and mobile devices -->
       
-      <img src="assets/dist/img/Logo.png" alt="Logo" height="100%">
+      <img src="assets/dist/img/Logo.png" alt="Logo" height="100%" width="100%">
       <span class="logo-lg"><b>Astray </b>Apps</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
@@ -64,13 +64,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<?php echo base_url(); ?>assets/dist/img/admin-user.png" class="user-image" alt="User Image">
+              <img src="<?php echo base_url(); ?>assets/dist/img/admin1.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs">Admin</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="<?php echo base_url(); ?>assets/dist/img/admin-user.png" class="img-circle" alt="User Image">
+                <img src="<?php echo base_url(); ?>assets/dist/img/admin1.jpg" class="img-circle" alt="User Image">
                 <p>Admin</p>
               </li>
               <!-- Menu Footer-->
@@ -78,6 +78,10 @@
                 <div class="pull-right">
                   <a href="<?php echo base_url(); ?>logout" class="btn btn-default btn-flat">Sign out</a>
                 </div>
+                <div class="pull-left">
+                  <a href="<?php echo base_url(); ?>" class="btn btn-default btn-flat">Profile</a>
+                </div>
+              </li>
               </li>
             </ul>
           </li>
@@ -115,8 +119,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url(); ?>add-staff"><i class="fa fa-circle-o"></i> Add Staff</a></li>
-            <li><a href="<?php echo base_url(); ?>manage-staff"><i class="fa fa-circle-o"></i> Manage Staff</a></li>
+            <li><a href="<?php echo base_url(); ?>add-staff"><i class="fa fa-circle-o"></i> Add Employee</a></li>
+            <li><a href="<?php echo base_url(); ?>manage-staff"><i class="fa fa-circle-o"></i> Manage Employee</a></li>
           </ul>
         </li>
 
@@ -128,27 +132,15 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url(); ?>add-department"><i class="fa fa-circle-o"></i> Add Department</a></li>
-            <li><a href="<?php echo base_url(); ?>manage-department"><i class="fa fa-circle-o"></i> Manage Department</a></li>
+            <li><a href="<?php echo base_url(); ?>add-department"><i class="fa fa-circle-o"></i> Add Departments</a></li>
+            <li><a href="<?php echo base_url(); ?>manage-department"><i class="fa fa-circle-o"></i> Manage Departments</a></li>
           </ul>
         </li>
+        <li><a href="<?php echo base_url(); ?>add-staff"><i class="fa fa-calendar-plus-o"></i> Attendance</a></li>
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-calendar-plus-o"></i> <span>Attendance</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url(); ?>add-staff"><i class="fa fa-circle-o"></i> Add Staff</a></li>
-            <li><a href="<?php echo base_url(); ?>manage-staff"><i class="fa fa-circle-o"></i> Manage Staff</a></li>
-          </ul>
-        </li>
-
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-money"></i> <span>Payments</span>
+            <i class="fa fa-money"></i> <span>Payroll</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -167,8 +159,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url(); ?>add-salary"><i class="fa fa-circle-o"></i> Add Salary</a></li>
-            <li><a href="<?php echo base_url(); ?>manage-salary"><i class="fa fa-circle-o"></i> Manage Salary</a></li>
+            <li><a href="<?php echo base_url(); ?>add-salary"><i class="fa fa-circle-o"></i> Add Event</a></li>
+            <li><a href="<?php echo base_url(); ?>manage-salary"><i class="fa fa-circle-o"></i> Manage Event</a></li>
           </ul>
         </li>
 
@@ -180,45 +172,17 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url(); ?>approve-leave"><i class="fa fa-circle-o"></i> Manage Staff's Leave</a></li>
+            <li><a href="<?php echo base_url(); ?>approve-leave"><i class="fa fa-circle-o"></i> Manage Employee's Leave</a></li>
             <li><a href="<?php echo base_url(); ?>leave-history"><i class="fa fa-circle-o"></i> Leave History</a></li>
           </ul>
         </li>
-
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-book"></i> <span>Messages</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url(); ?>add-salary"><i class="fa fa-circle-o"></i> Add Salary</a></li>
-            <li><a href="<?php echo base_url(); ?>manage-salary"><i class="fa fa-circle-o"></i> Manage Salary</a></li>
-          </ul>
-        </li>
-
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-bar-chart"></i> <span>Performance</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url(); ?>add-salary"><i class="fa fa-circle-o"></i> Add Salary</a></li>
-            <li><a href="<?php echo base_url(); ?>manage-salary"><i class="fa fa-circle-o"></i> Manage Salary</a></li>
-          </ul>
-        </li>
-
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-arrow-circle-o-right"></i> <span>Logout</span>
-            <span class="pull-right-container">              
-            </span>
+        <li><a href="<?php echo base_url(); ?>add-salary"><i class="fa fa-book"></i> Messages</a></li>
+        <li><a href="<?php echo base_url(); ?>add-salary"><i class="fa fa-bar-chart"></i> Performance</a></li>
+        <li>
+        <a href="<?php echo base_url(); ?>logout">
+            <i class="fa fa-arrow-circle-o-right btn btn"></i> <span>Logout</span>
           </a>
         </li>
-
       </ul>
     </section>
     <!-- /.sidebar -->
