@@ -34,7 +34,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="./dashboard.php" class="logo">
+    <a href="<?php echo base_url(); ?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <!-- logo for regular state and mobile devices -->
       
@@ -119,8 +119,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url(); ?>add-staff"><i class="fa fa-circle-o"></i> Add Employee</a></li>
-            <li><a href="<?php echo base_url(); ?>manage-staff"><i class="fa fa-circle-o"></i> Manage Employee</a></li>
+            <li><a href="<?php echo base_url(); ?>add-employee"><i class="fa fa-circle-o"></i> Add Employee</a></li>
+            <li><a href="<?php echo base_url(); ?>manage-employee"><i class="fa fa-circle-o"></i> Manage Employee</a></li>
           </ul>
         </li>
 
@@ -136,7 +136,7 @@
             <li><a href="<?php echo base_url(); ?>manage-department"><i class="fa fa-circle-o"></i> Manage Departments</a></li>
           </ul>
         </li>
-        <li><a href="<?php echo base_url(); ?>add-staff"><i class="fa fa-calendar-plus-o"></i> Attendance</a></li>
+        <li><a href="<?php echo base_url(); ?>add-employee"><i class="fa fa-calendar-plus-o"></i> Attendance</a></li>
 
         <li class="treeview">
           <a href="#">

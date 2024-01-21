@@ -49,7 +49,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="exampleInputPassword1">Department Name</label>
-                    <select class="form-control" name="slcdepartment" onchange="getstaff(this.value)">
+                    <select class="form-control" name="slcdepartment" onchange="getemployee(this.value)">
                       <option value="">Select</option>
                         <?php
                           if(isset($departments))
@@ -82,7 +82,7 @@
   <!-- /.content-wrapper -->
 
   <script>
-    function getstaff(dept) {
+    function getemployee(dept) {
             $.ajax({
                 type: "POST",
                 url:  "<?php echo site_url('Salary/get_salary_list'); ?>",

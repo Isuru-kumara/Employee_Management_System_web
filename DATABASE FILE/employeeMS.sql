@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2021 at 07:39 PM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Generation Time: Jan 21, 2024 at 02:12 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `employeems`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(140) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `email`, `password`) VALUES
+(1, 'admin@gmail.com', '12345');
 
 -- --------------------------------------------------------
 
@@ -293,7 +313,7 @@ INSERT INTO `country_tbl` (`id`, `country_code`, `country_name`) VALUES
 CREATE TABLE `department_tbl` (
   `id` int(11) NOT NULL,
   `department_name` varchar(100) NOT NULL,
-  `added_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `added_on` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -311,15 +331,55 @@ INSERT INTO `department_tbl` (`id`, `department_name`, `added_on`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `employee_tbl`
+--
+
+CREATE TABLE `employee_tbl` (
+  `id` int(11) NOT NULL,
+  `employee_name` varchar(150) NOT NULL,
+  `gender` varchar(10) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `mobile` bigint(20) NOT NULL,
+  `dob` date NOT NULL,
+  `doj` date NOT NULL,
+  `address` text DEFAULT NULL,
+  `city` varchar(100) NOT NULL,
+  `state` varchar(100) NOT NULL,
+  `country` varchar(50) NOT NULL,
+  `department_id` int(11) NOT NULL,
+  `pic` varchar(150) NOT NULL DEFAULT 'default-pic.jpg',
+  `added_by` int(11) NOT NULL,
+  `updated_on` date NOT NULL,
+  `added_on` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `employee_tbl`
+--
+
+INSERT INTO `employee_tbl` (`id`, `employee_name`, `gender`, `email`, `mobile`, `dob`, `doj`, `address`, `city`, `state`, `country`, `department_id`, `pic`, `added_by`, `updated_on`, `added_on`) VALUES
+(2, 'Steven Askew', 'Male', 'steven@gmail.com', 7444440001, '1990-02-18', '2020-11-27', '3721  Hill Croft Farm Road', 'BURLINGTON', 'MI', 'United States', 1, 'smportrait.jpg', 0, '0000-00-00', '2021-05-27 15:37:03'),
+(3, 'Tatiana Breit', 'Female', 'tatiana@gmail.com', 7402222220, '1994-10-14', '2021-02-21', '3397  Happy Hollow Road', 'Jacksonville', 'NC', 'United States', 2, 'prtwm.jpg', 0, '0000-00-00', '2021-05-27 15:37:16'),
+(4, 'Christine Moore', 'Female', 'christine@gmail.com', 8888877777, '1994-08-01', '2020-01-15', '4047  Timbercrest Road', 'Anchorage', 'AK', 'United States', 3, 'christen-freeimg.jpg', 0, '0000-00-00', '2021-05-27 15:31:20'),
+(5, 'Liam Moore', 'Male', 'liam@gmail.com', 7410233333, '1994-12-02', '2021-04-04', '3474  Viking Drive', 'Worthington', 'OH', 'United States', 4, '7002489_preview.jpg', 1, '0000-00-00', '2021-05-27 13:55:22'),
+(6, 'George J Barnes', 'Male', 'barnes@gmail.com', 1010101010, '1988-02-03', '2021-01-13', '3079  Chardonnay Drive', 'Ocala', 'FL', 'United States', 2, 'skport.jpg', 1, '0000-00-00', '2021-05-27 15:28:48'),
+(7, 'Samuel Huntsman', 'Male', 'samuel@gmail.com', 7410000010, '1991-12-28', '2021-04-25', '2315  Cherry Tree Drive', 'Jacksonville', 'FL', 'United States', 5, 'dportrait.jpg', 1, '0000-00-00', '2021-05-27 16:52:18'),
+(8, 'Mark Heiden', 'Male', 'markh@gmail.com', 7070707069, '1990-02-12', '2021-02-04', '2190  Laurel Lane', 'Midland', 'TX', 'United States', 2, 'pauptr.jpg', 1, '0000-00-00', '2021-05-27 16:53:57'),
+(9, 'Angela Bridges', 'Female', 'angela@gmail.com', 7417417417, '1992-02-11', '2021-03-05', '3538 Melville Street', 'Jackson', 'TN', 'United States', 6, 'sm-freeimg.jpg', 1, '0000-00-00', '2021-05-27 17:29:36'),
+(10, 'isuru kolongahapitiya', 'Male', 'isuru@gmail.com', 765551064, '1999-05-15', '2024-01-20', 'A/3, Walgama, Yatagama, Rambukkana', 'Kegalle', 'Rambukkana', 'Sri Lanka', 4, '169458951.jpg', 1, '0000-00-00', '2024-01-19 21:00:48');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `leave_tbl`
 --
 
 CREATE TABLE `leave_tbl` (
   `id` int(11) NOT NULL,
-  `staff_id` int(11) NOT NULL,
+  `employee_id` int(11) NOT NULL,
   `leave_reason` varchar(90) NOT NULL,
   `description` text NOT NULL,
-  `status` int(11) NOT NULL DEFAULT '0',
+  `status` int(11) NOT NULL DEFAULT 0,
   `leave_from` date NOT NULL,
   `leave_to` date NOT NULL,
   `updated_on` date NOT NULL,
@@ -330,12 +390,13 @@ CREATE TABLE `leave_tbl` (
 -- Dumping data for table `leave_tbl`
 --
 
-INSERT INTO `leave_tbl` (`id`, `staff_id`, `leave_reason`, `description`, `status`, `leave_from`, `leave_to`, `updated_on`, `applied_on`) VALUES
+INSERT INTO `leave_tbl` (`id`, `employee_id`, `leave_reason`, `description`, `status`, `leave_from`, `leave_to`, `updated_on`, `applied_on`) VALUES
 (1, 2, 'Sick', 'Not feeling well enough to join', 1, '2021-01-15', '2021-01-17', '0000-00-00', '2021-01-15'),
 (2, 5, 'Casual Leave', 'been working for full hours since last month, got to free my mind for few days', 1, '2021-05-28', '2021-05-29', '0000-00-00', '2021-05-27'),
 (3, 6, 'Day Off', 'Requesting for a day off as I need to join my pal\'s wedding!', 1, '2021-05-28', '2021-05-29', '0000-00-00', '2021-05-27'),
 (4, 3, 'Casual Leave', 'for vacation, rest, and family events', 2, '2021-05-30', '2021-06-06', '0000-00-00', '2021-05-27'),
-(5, 9, 'Quarantine', 'i need to quarantine myself for few weeks as i got some symptoms of covid-19', 1, '2021-05-28', '2021-06-11', '0000-00-00', '2021-05-27');
+(5, 9, 'Quarantine', 'i need to quarantine myself for few weeks as i got some symptoms of covid-19', 1, '2021-05-28', '2021-06-11', '0000-00-00', '2021-05-27'),
+(6, 5, 'nikan', 'bnhmjklikkkjjh', 2, '2024-01-20', '2024-01-27', '0000-00-00', '2024-01-19');
 
 -- --------------------------------------------------------
 
@@ -348,7 +409,7 @@ CREATE TABLE `login_tbl` (
   `username` varchar(80) NOT NULL,
   `password` varchar(80) NOT NULL,
   `usertype` int(11) NOT NULL,
-  `status` int(11) NOT NULL DEFAULT '1'
+  `status` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -356,7 +417,7 @@ CREATE TABLE `login_tbl` (
 --
 
 INSERT INTO `login_tbl` (`id`, `username`, `password`, `usertype`, `status`) VALUES
-(1, 'admin', 'password0101', 1, 1),
+(1, 'admin', 'admin', 1, 1),
 (2, 'steven@gmail.com', '7444440001', 2, 1),
 (3, 'tatiana@gmail.com', '7402222220', 2, 1),
 (4, 'christine@gmail.com', '8888877777', 2, 1),
@@ -364,7 +425,8 @@ INSERT INTO `login_tbl` (`id`, `username`, `password`, `usertype`, `status`) VAL
 (6, 'barnes@gmail.com', '1010101010', 2, 1),
 (7, 'samuel@gmail.com', '7410000010', 2, 1),
 (8, 'markh@gmail.com', '7070707069', 2, 1),
-(9, 'angela@gmail.com', '7417417417', 2, 1);
+(9, 'angela@gmail.com', '7417417417', 2, 1),
+(10, 'isuru', '1234', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -374,68 +436,39 @@ INSERT INTO `login_tbl` (`id`, `username`, `password`, `usertype`, `status`) VAL
 
 CREATE TABLE `salary_tbl` (
   `id` int(11) NOT NULL,
-  `staff_id` int(11) NOT NULL,
+  `employee_id` int(11) NOT NULL,
   `basic_salary` bigint(20) NOT NULL,
   `allowance` bigint(20) NOT NULL,
   `total` bigint(20) NOT NULL,
   `added_by` int(11) NOT NULL,
   `updated_on` date NOT NULL,
-  `added_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `added_on` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `salary_tbl`
 --
 
-INSERT INTO `salary_tbl` (`id`, `staff_id`, `basic_salary`, `allowance`, `total`, `added_by`, `updated_on`, `added_on`) VALUES
+INSERT INTO `salary_tbl` (`id`, `employee_id`, `basic_salary`, `allowance`, `total`, `added_by`, `updated_on`, `added_on`) VALUES
 (1, 2, 14000, 0, 14000, 1, '0000-00-00', '2021-05-02 08:23:30'),
 (2, 3, 9100, 300, 9400, 1, '0000-00-00', '2021-04-28 02:39:23'),
 (3, 4, 4950, 0, 4950, 1, '0000-00-00', '2021-04-30 07:38:02'),
 (4, 5, 6100, 250, 6350, 1, '0000-00-00', '2021-04-30 13:57:02'),
-(5, 9, 4750, 190, 4940, 1, '0000-00-00', '2021-05-27 17:31:05');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `staff_tbl`
---
-
-CREATE TABLE `staff_tbl` (
-  `id` int(11) NOT NULL,
-  `staff_name` varchar(150) NOT NULL,
-  `gender` varchar(10) NOT NULL,
-  `email` varchar(150) NOT NULL,
-  `mobile` bigint(20) NOT NULL,
-  `dob` date NOT NULL,
-  `doj` date NOT NULL,
-  `address` text,
-  `city` varchar(100) NOT NULL,
-  `state` varchar(100) NOT NULL,
-  `country` varchar(50) NOT NULL,
-  `department_id` int(11) NOT NULL,
-  `pic` varchar(150) NOT NULL DEFAULT 'default-pic.jpg',
-  `added_by` int(11) NOT NULL,
-  `updated_on` date NOT NULL,
-  `added_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `staff_tbl`
---
-
-INSERT INTO `staff_tbl` (`id`, `staff_name`, `gender`, `email`, `mobile`, `dob`, `doj`, `address`, `city`, `state`, `country`, `department_id`, `pic`, `added_by`, `updated_on`, `added_on`) VALUES
-(2, 'Steven Askew', 'Male', 'steven@gmail.com', 7444440001, '1990-02-18', '2020-11-27', '3721  Hill Croft Farm Road', 'BURLINGTON', 'MI', 'United States', 1, 'smportrait.jpg', 0, '0000-00-00', '2021-05-27 15:37:03'),
-(3, 'Tatiana Breit', 'Female', 'tatiana@gmail.com', 7402222220, '1994-10-14', '2021-02-21', '3397  Happy Hollow Road', 'Jacksonville', 'NC', 'United States', 2, 'prtwm.jpg', 0, '0000-00-00', '2021-05-27 15:37:16'),
-(4, 'Christine Moore', 'Female', 'christine@gmail.com', 8888877777, '1994-08-01', '2020-01-15', '4047  Timbercrest Road', 'Anchorage', 'AK', 'United States', 3, 'christen-freeimg.jpg', 0, '0000-00-00', '2021-05-27 15:31:20'),
-(5, 'Liam Moore', 'Male', 'liam@gmail.com', 7410233333, '1994-12-02', '2021-04-04', '3474  Viking Drive', 'Worthington', 'OH', 'United States', 4, '7002489_preview.jpg', 1, '0000-00-00', '2021-05-27 13:55:22'),
-(6, 'George J Barnes', 'Male', 'barnes@gmail.com', 1010101010, '1988-02-03', '2021-01-13', '3079  Chardonnay Drive', 'Ocala', 'FL', 'United States', 2, 'skport.jpg', 1, '0000-00-00', '2021-05-27 15:28:48'),
-(7, 'Samuel Huntsman', 'Male', 'samuel@gmail.com', 7410000010, '1991-12-28', '2021-04-25', '2315  Cherry Tree Drive', 'Jacksonville', 'FL', 'United States', 5, 'dportrait.jpg', 1, '0000-00-00', '2021-05-27 16:52:18'),
-(8, 'Mark Heiden', 'Male', 'markh@gmail.com', 7070707069, '1990-02-12', '2021-02-04', '2190  Laurel Lane', 'Midland', 'TX', 'United States', 2, 'pauptr.jpg', 1, '0000-00-00', '2021-05-27 16:53:57'),
-(9, 'Angela Bridges', 'Female', 'angela@gmail.com', 7417417417, '1992-02-11', '2021-03-05', '3538 Melville Street', 'Jackson', 'TN', 'United States', 6, 'sm-freeimg.jpg', 1, '0000-00-00', '2021-05-27 17:29:36');
+(5, 9, 4750, 190, 4940, 1, '0000-00-00', '2021-05-27 17:31:05'),
+(6, 5, 25000, 2500, 27500, 1, '0000-00-00', '2024-01-19 21:01:53'),
+(7, 10, 50000, 10000, 60000, 1, '0000-00-00', '2024-01-19 21:01:53'),
+(8, 5, 10000, 12000, 22000, 1, '0000-00-00', '2024-01-20 06:54:53'),
+(9, 10, 24000, 10000, 34000, 1, '0000-00-00', '2024-01-20 06:54:53');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `country_tbl`
@@ -447,6 +480,12 @@ ALTER TABLE `country_tbl`
 -- Indexes for table `department_tbl`
 --
 ALTER TABLE `department_tbl`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `employee_tbl`
+--
+ALTER TABLE `employee_tbl`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -468,12 +507,6 @@ ALTER TABLE `salary_tbl`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `staff_tbl`
---
-ALTER TABLE `staff_tbl`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -482,31 +515,38 @@ ALTER TABLE `staff_tbl`
 --
 ALTER TABLE `country_tbl`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=247;
+
 --
 -- AUTO_INCREMENT for table `department_tbl`
 --
 ALTER TABLE `department_tbl`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `employee_tbl`
+--
+ALTER TABLE `employee_tbl`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT for table `leave_tbl`
 --
 ALTER TABLE `leave_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `login_tbl`
 --
 ALTER TABLE `login_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT for table `salary_tbl`
 --
 ALTER TABLE `salary_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `staff_tbl`
---
-ALTER TABLE `staff_tbl`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

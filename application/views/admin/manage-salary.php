@@ -46,7 +46,7 @@
                   <thead>
                   <tr>
                     <th>#</th>
-                    <th>Staff Name</th>
+                    <th>Employee Name</th>
                     <th>Department</th>
                     <th>Photo</th>
                     <th>Basic Salary</th>
@@ -65,7 +65,7 @@
                   ?>
                       <tr>
                         <td><?php echo $i; ?></td>
-                        <td><?php echo $cnt['staff_name']; ?></td>
+                        <td><?php echo $cnt['employee_name']; ?></td>
                         <td><?php echo $cnt['department_name']; ?></td>
                         <td><img src="<?php echo base_url(); ?>uploads/profile-pic/<?php echo $cnt['pic'] ?>" class="img-circle" width="50px" alt="User Image"></td>
                         <td>$<?php echo $cnt['basic_salary']; ?></td>

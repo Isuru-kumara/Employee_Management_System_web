@@ -28,12 +28,12 @@ class Salary extends CI_Controller {
         $this->load->view('admin/footer');
     }
 
-    public function invoicestaff($id)
+    public function invoiceemployee($id)
     {
         $data['content']=$this->Salary_model->select_salary_byID($id);
-        $this->load->view('staff/header');
-        $this->load->view('staff/salaryinvoice',$data);
-        $this->load->view('staff/footer');
+        $this->load->view('employee/header');
+        $this->load->view('employee/salaryinvoice',$data);
+        $this->load->view('employee/footer');
     }
 
     public function invoice_print($id)
@@ -52,11 +52,11 @@ class Salary extends CI_Controller {
 
     public function view()
     {
-        $staff=$this->session->userdata('userid');
-        $data['content']=$this->Salary_model->select_salary_byStaffID($staff);
-        $this->load->view('staff/header');
-        $this->load->view('staff/view-salary',$data);
-        $this->load->view('staff/footer');
+        $employee=$this->session->userdata('userid');
+        $data['content']=$this->Salary_model->select_salary_byEmployeeID($employee);
+        $this->load->view('employee/header');
+        $this->load->view('employee/view-salary',$data);
+        $this->load->view('employee/footer');
     }
 
     public function insert()
@@ -72,7 +72,7 @@ class Salary extends CI_Controller {
         { 
             if($total[$i]>0)
             {
-                $data=$this->Salary_model->insert_salary(array('staff_id' => $id[$i],
+                $data=$this->Salary_model->insert_salary(array('employee_id' => $id[$i],
                     'basic_salary' => $basic[$i],
                     'allowance' => $allowance[$i],
                     'total' => $total[$i],
@@ -130,7 +130,7 @@ class Salary extends CI_Controller {
     public function get_salary_list()
     {
         $dept = $_POST['dept'];
-        $data=$this->Staff_model->select_staff_byDept($dept);
+        $data=$this->Employee_model->select_employee_byDept($dept);
         if(isset($data)){
             print '<div class="box-body">
             <div class="col-md-12">
@@ -138,7 +138,7 @@ class Salary extends CI_Controller {
             <table class="table table-bordered table-striped">
             <thead>
                   <tr>
-                    <th>Staff</th>
+                    <th>Employee</th>
                     <th>Basic Salary ($)</th>
                     <th>Allowance ($)</th>
                     <th>Total ($)</th>
@@ -149,7 +149,7 @@ class Salary extends CI_Controller {
             foreach($data as $d)
             {
                 print '<tr>
-                <td>'.$d["staff_name"].'</td>
+                <td>'.$d["employee_name"].'</td>
                 <td><input type="hidden" name="txtid[]" value="'.$d["id"].'">
                     <input type="text" name="txtbasic[]" class="form-control expenses">
                 </td>
@@ -169,7 +169,7 @@ class Salary extends CI_Controller {
             // print '<div class="col-md-12">
             //       <div class="form-group">
             //         <label for="exampleInputPassword1">Department Name</label>
-            //         <select class="form-control" name="slcdepartment" onchange="getstaff(this.value)">
+            //         <select class="form-control" name="slcdepartment" onchange="getemployee(this.value)">
             //           <option value="">Select</option>
                         
             //         </select>

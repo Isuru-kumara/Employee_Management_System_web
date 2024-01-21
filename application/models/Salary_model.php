@@ -12,11 +12,11 @@ class Salary_model extends CI_Model {
 
     function select_salary()
     {
-        $this->db->order_by('staff_tbl.id','DESC');
-        $this->db->select("salary_tbl.*,staff_tbl.staff_name,staff_tbl.pic,department_tbl.department_name");
+        $this->db->order_by('employee_tbl.id','DESC');
+        $this->db->select("salary_tbl.*,employee_tbl.employee_name,employee_tbl.pic,department_tbl.department_name");
         $this->db->from("salary_tbl");
-        $this->db->join("staff_tbl",'staff_tbl.id=salary_tbl.staff_id');
-        $this->db->join("department_tbl",'department_tbl.id=staff_tbl.department_id');
+        $this->db->join("employee_tbl",'employee_tbl.id=salary_tbl.employee_id');
+        $this->db->join("department_tbl",'department_tbl.id=employee_tbl.department_id');
         $qry=$this->db->get();
         if($qry->num_rows()>0)
         {
@@ -28,10 +28,10 @@ class Salary_model extends CI_Model {
     function select_salary_byID($id)
     {
         $this->db->where('salary_tbl.id',$id);
-        $this->db->select("salary_tbl.*,staff_tbl.staff_name,staff_tbl.city,staff_tbl.state,staff_tbl.country,staff_tbl.mobile,staff_tbl.email,department_tbl.department_name");
+        $this->db->select("salary_tbl.*,employee_tbl.employee_name,employee_tbl.city,employee_tbl.state,employee_tbl.country,employee_tbl.mobile,employee_tbl.email,department_tbl.department_name");
         $this->db->from("salary_tbl");
-        $this->db->join("staff_tbl",'staff_tbl.id=salary_tbl.staff_id');
-        $this->db->join("department_tbl",'department_tbl.id=staff_tbl.department_id');
+        $this->db->join("employee_tbl",'employee_tbl.id=salary_tbl.employee_id');
+        $this->db->join("department_tbl",'department_tbl.id=employee_tbl.department_id');
         $qry=$this->db->get();
         if($qry->num_rows()>0)
         {
@@ -40,13 +40,13 @@ class Salary_model extends CI_Model {
         }
     }
 
-    function select_salary_byStaffID($staffid)
+    function select_salary_byEmployeeID($employeeid)
     {
-        $this->db->where('salary_tbl.staff_id',$staffid);
-        $this->db->select("salary_tbl.*,staff_tbl.staff_name,staff_tbl.city,staff_tbl.state,staff_tbl.country,staff_tbl.mobile,staff_tbl.email,department_tbl.department_name");
+        $this->db->where('salary_tbl.employee_id',$employeeid);
+        $this->db->select("salary_tbl.*,employee_tbl.employee_name,employee_tbl.city,employee_tbl.state,employee_tbl.country,employee_tbl.mobile,employee_tbl.email,department_tbl.department_name");
         $this->db->from("salary_tbl");
-        $this->db->join("staff_tbl",'staff_tbl.id=salary_tbl.staff_id');
-        $this->db->join("department_tbl",'department_tbl.id=staff_tbl.department_id');
+        $this->db->join("employee_tbl",'employee_tbl.id=salary_tbl.employee_id');
+        $this->db->join("department_tbl",'department_tbl.id=employee_tbl.department_id');
         $qry=$this->db->get();
         if($qry->num_rows()>0)
         {
@@ -57,11 +57,11 @@ class Salary_model extends CI_Model {
 
     
 
-    function select_staff_byEmail($email)
+    function select_employee_byEmail($email)
     {
 
         $this->db->where('email',$email);
-        $qry=$this->db->get('staff_tbl');
+        $qry=$this->db->get('employee_tbl');
         if($qry->num_rows()>0)
         {
             $result=$qry->result_array();
@@ -88,10 +88,10 @@ class Salary_model extends CI_Model {
     }
 
     
-    function update_staff($data,$id)
+    function update_employee($data,$id)
     {
         $this->db->where('id', $id);
-        $this->db->update('staff_tbl',$data);
+        $this->db->update('employee_tbl',$data);
         $this->db->affected_rows();
     }
 

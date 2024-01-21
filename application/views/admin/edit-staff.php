@@ -10,12 +10,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Staff Management
+        Employee Management
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Staff Management</a></li>
-        <li class="active">Edit Staff</li>
+        <li><a href="#">Employee Management</a></li>
+        <li class="active">Edit Employee</li>
       </ol>
     </section>
 
@@ -52,21 +52,21 @@
           <!-- general form elements -->
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Edit Staff</h3>
+              <h3 class="box-title">Edit Employee</h3>
             </div>
             <!-- /.box-header -->
 
             <?php if(isset($content)): ?>
               <?php foreach($content as $cnt): ?>
                   <!-- form start -->
-                  <?php echo form_open_multipart('Staff/update');?>
+                  <?php echo form_open_multipart('Employee/update');?>
                     <div class="box-body">
 
                       <div class="col-md-6">
                         <div class="form-group">
                           <label>Full Name</label>
                           <input type="hidden" name="txtid" value="<?php echo $cnt['id'] ?>" class="form-control" placeholder="Full Name">
-                          <input type="text" name="txtname" value="<?php echo $cnt['staff_name'] ?>" class="form-control" placeholder="Full Name">
+                          <input type="text" name="txtname" value="<?php echo $cnt['employee_name'] ?>" class="form-control" placeholder="Full Name">
                         </div>
                       </div>
 

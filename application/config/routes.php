@@ -64,13 +64,13 @@ $route['edit-department/(:num)'] = 'department/edit/$1';
 $route['update-department'] = 'department/update';
 $route['delete-department/(:num)'] = 'department/delete/$1';
 
-//staff routes
-$route['add-staff'] = 'staff';
-$route['manage-staff'] = 'staff/manage';
-$route['insert-staff'] = 'staff/insert';
-$route['delete-staff/(:num)'] = 'staff/delete/$1';
-$route['edit-staff/(:num)'] = 'staff/edit/$1';
-$route['update-staff'] = 'staff/update';
+//employee routes
+$route['add-employee'] = 'employee';
+$route['manage-employee'] = 'employee/manage';
+$route['insert-employee'] = 'employee/insert';
+$route['delete-employee/(:num)'] = 'employee/delete/$1';
+$route['edit-employee/(:num)'] = 'employee/edit/$1';
+$route['update-employee'] = 'employee/update';
 
 //salary routes
 $route['add-salary'] = 'salary';
@@ -86,4 +86,4 @@ $route['leave-history'] = 'leave/manage';
 $route['leave-approved/(:num)'] = 'leave/insert_approve/$1';
 $route['leave-rejected/(:num)'] = 'leave/insert_reject/$1';
 $route['view-leave'] = 'leave/view';
-$route['salaryinvoice/(:num)'] = 'salary/invoicestaff/$1';
+$route['salaryinvoice/(:num)'] = 'salary/invoiceemployee/$1';

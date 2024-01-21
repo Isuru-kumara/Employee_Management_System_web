@@ -60,7 +60,7 @@
         <div class="col-sm-4 invoice-col">
           To
           <address>
-            <strong><?php echo $cnt['staff_name']; ?></strong><br>
+            <strong><?php echo $cnt['employee_name']; ?></strong><br>
             <?php echo $cnt['city']; ?><br>
             <?php echo $cnt['state']; ?>, <?php echo $cnt['country']; ?><br>
             Phone: <?php echo $cnt['mobile']; ?><br>
@@ -113,7 +113,7 @@
           <img src="<?php echo base_url(); ?>assets/dist/img/credit/paypal2.png" alt="Paypal">
 
           <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
-            Dear <?php echo $cnt['staff_name']; ?>, Our Company has just processed your payments. Your payment has been deposited electronically in your account on <?php echo $cnt['added_on']; ?> <br> Regards OMS
+            Dear <?php echo $cnt['employee_name']; ?>, Our Company has just processed your payments. Your payment has been deposited electronically in your account on <?php echo $cnt['added_on']; ?> <br> Regards OMS
           </p>
         </div>
         <!-- /.col -->

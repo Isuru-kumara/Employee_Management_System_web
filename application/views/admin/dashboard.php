@@ -43,21 +43,21 @@
           <div class="small-box bg-maroon">
             <div class="inner">
               <h3><?php 
-              if(isset($staff))
+              if(isset($employee))
               {
-                echo sizeof($staff);
+                echo sizeof($employee);
               }
               else{
                 echo 0;
               }
               ?></h3>
 
-              <p>Staff</p>
+              <p>Employee</p>
             </div>
             <div class="icon">
               <i class="ionicons ion-android-contacts"></i>
             </div>
-            <a href="<?php echo base_url(); ?>manage-staff" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url(); ?>manage-employee" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->

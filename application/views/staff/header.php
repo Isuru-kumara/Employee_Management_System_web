@@ -54,14 +54,14 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo base_url(); ?>assets/dist/img/userav.png" class="user-image" alt="User Image">
-              <span class="hidden-xs">Staff</span>
+              <span class="hidden-xs">Employee</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
                 <img src="<?php echo base_url(); ?>assets/dist/img/userav.png" class="img-circle" alt="User Image">
                 <p>
-                  Staff
+                  Employee
                   <small>Since Nov, 2020</small>
                 </p>
               </li>
@@ -90,7 +90,7 @@
           <img src="<?php echo base_url(); ?>assets/dist/img/userav.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Staff Account</p>
+          <p>Employee Account</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -119,8 +119,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url(); ?>add-staff"><i class="fa fa-circle-o"></i> Add Staff</a></li>
-            <li><a href="<?php echo base_url(); ?>manage-staff"><i class="fa fa-circle-o"></i> Manage Staff</a></li>
+            <li><a href="<?php echo base_url(); ?>add-employee"><i class="fa fa-circle-o"></i> Add Employee</a></li>
+            <li><a href="<?php echo base_url(); ?>manage-employee"><i class="fa fa-circle-o"></i> Manage Employee</a></li>
           </ul>
         </li>
 
@@ -189,7 +189,7 @@
         </li>
 
         <li class="treeview">
-          <a href="#">
+          <a href="<?php echo base_url(); ?>logout">
             <i class="fa fa-share"></i> <span>Logout</span>
             <span class="pull-right-container">              
             </span>

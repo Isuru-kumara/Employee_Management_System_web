@@ -14,14 +14,14 @@ class Leave extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('staff/header');
-        $this->load->view('staff/apply-leave');
-        $this->load->view('staff/footer');
+        $this->load->view('employee/header');
+        $this->load->view('employee/apply-leave');
+        $this->load->view('employee/footer');
     }
 
     public function approve()
     {
-        $staff=$this->session->userdata('userid');
+        $employee=$this->session->userdata('userid');
         $data['content']=$this->Leave_model->select_leave_forApprove();
         $this->load->view('admin/header');
         $this->load->view('admin/approve-leave',$data);
@@ -38,11 +38,11 @@ class Leave extends CI_Controller {
 
     public function view()
     {
-        $staff=$this->session->userdata('userid');
-        $data['content']=$this->Leave_model->select_leave_byStaffID($staff);
-        $this->load->view('staff/header');
-        $this->load->view('staff/view-leave',$data);
-        $this->load->view('staff/footer');
+        $employee=$this->session->userdata('userid');
+        $data['content']=$this->Leave_model->select_leave_byEmployeeID($employee);
+        $this->load->view('employee/header');
+        $this->load->view('employee/view-leave',$data);
+        $this->load->view('employee/footer');
     }
 
     public function insert_approve($id)
@@ -75,12 +75,12 @@ class Leave extends CI_Controller {
         $this->form_validation->set_rules('txtleavefrom', 'Leave From', 'required');
         $this->form_validation->set_rules('txtleaveto', 'Leave To', 'required');
 
-        $staff=$this->session->userdata('userid');
+        $employee=$this->session->userdata('userid');
         $reason=$this->input->post('txtreason');
         $lfrom=$this->input->post('txtleavefrom');
         $lto=$this->input->post('txtleaveto');
         $desc=$this->input->post('txtdescription');
-        $data=$this->Leave_model->insert_leave(array('staff_id'=>$staff,'leave_reason'=>$reason,'leave_from'=>$lfrom,'leave_to'=>$lto,'description'=>$desc,'applied_on'=>date('Y-m-d')));
+        $data=$this->Leave_model->insert_leave(array('employee_id'=>$employee,'leave_reason'=>$reason,'leave_from'=>$lfrom,'leave_to'=>$lto,'description'=>$desc,'applied_on'=>date('Y-m-d')));
         if($data==true)
         {
             $this->session->set_flashdata('success', "New Leave Applied Succesfully"); 

@@ -19,7 +19,7 @@ class Home extends CI_Controller {
             if($this->session->userdata('usertype')==1)
             {
                 $data['department']=$this->Department_model->select_departments();
-                $data['staff']=$this->Staff_model->select_staff();
+                $data['employee']=$this->Employee_model->select_employee();
                 $data['leave']=$this->Leave_model->select_leave_forApprove();
                 $data['salary']=$this->Salary_model->sum_salary();
                 
@@ -28,11 +28,11 @@ class Home extends CI_Controller {
                 $this->load->view('admin/footer');
             }
             else{
-                $staff=$this->session->userdata('userid');
-                $data['leave']=$this->Leave_model->select_leave_byStaffID($staff);
-                $this->load->view('staff/header');
-                $this->load->view('staff/dashboard',$data);
-                $this->load->view('staff/footer');
+                $employee=$this->session->userdata('userid');
+                $data['leave']=$this->Leave_model->select_leave_byemployeeID($employee);
+                $this->load->view('employee/header');
+                $this->load->view('employee/dashboard',$data);
+                $this->load->view('employee/footer');
             }
             
         }
