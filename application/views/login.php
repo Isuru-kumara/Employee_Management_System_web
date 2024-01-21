@@ -26,54 +26,105 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .login-page {
+      height: auto;
+      position: relative;
+    }
+
+    .bg {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+        }
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .login-box {
+      z-index: 1; /* Ensure the form is on top of the video */
+      position: relative;
+    }
+  </style>
 </head>
 <body class="hold-transition login-page">
-<div class="login-box">
-  <div class="login-logo">
-    <a href="#"><b>Employee</b> Management</a>
-  </div>
-  <!-- /.login-logo -->
-  <div class="login-box-body">
-    <p class="login-box-msg">Please Login To Continue..</p>
+  <div class="login-page">
+    <video autoplay muted loop class="bg">
+      <!-- Replace 'your-video.mp4' with the actual path to your video file -->
+      <source src="<?php echo base_url(); ?>assets/dist/img/background.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
-    <?php echo form_open('Home/login'); ?>
-      <div class="form-group has-feedback">
-        <input type="text" name="txtusername" class="form-control" placeholder="Username/Staff Email">
-        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+    <div class="login-box">
+      <div class="login-logo">
+        <a href="#"><b>Employee Management System </b> </a>
+      <img src="<?php echo base_url(); ?>assets/dist/img/logo2.png" class="mx-auto"/>
       </div>
-      <div class="form-group has-feedback">
-        <input type="password" name="txtpassword" class="form-control" placeholder="Password">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-      </div>
-      <?php echo $this->session->flashdata('login_error'); ?>
-      <div class="row">
-        <!-- /.col -->
-        <div class="col-xs-4 pull-left">
-          <button type="submit" class="btn btn-success btn-block btn-flat">Sign In</button>
-        </div>
-        <!-- /.col -->
-      </div>
-    </form>
-  </div>
-  <!-- /.login-box-body -->
-</div>
-<!-- /.login-box -->
+      <!-- /.login-logo -->
+      <div class="login-box-body">
+        <p class="login-box-msg">Please Login To Continue..</p>
 
-<!-- jQuery 3 -->
-<script src="<?php echo base_url(); ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="<?php echo base_url(); ?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- iCheck -->
-<script src="<?php echo base_url(); ?>assets/plugins/iCheck/icheck.min.js"></script>
-<script>
-  $(function () {
-    $('input').iCheck({
-      checkboxClass: 'icheckbox_square-blue',
-      radioClass: 'iradio_square-blue',
-      increaseArea: '20%' /* optional */
+        <?php echo form_open('Home/login'); ?>
+          <div class="form-group has-feedback">
+            <input type="text" name="txtusername" class="form-control" placeholder="Username/Employee Email">
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+            <input type="password" name="txtpassword" class="form-control" placeholder="Password">
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          </div>
+          <?php echo $this->session->flashdata('login_error'); ?>
+          <div class="row">
+            <!-- /.col -->
+            <div class="col-xs-4">
+            </div>
+            <div class="col-xs-4">
+            <button type="submit" class="btn btn-success btn-block btn-flat"><b>Sign In</b></button>
+            </div>
+            <div class="col-xs-4">
+            </div>
+          </div>
+            <!-- /.col -->
+          </div>
+        </form>
+      </div>
+      <!-- /.login-box-body -->
+    </div>
+    <!-- /.login-box -->
+  </div>
+
+  <!-- jQuery 3 -->
+  <script src="<?php echo base_url(); ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap 3.3.7 -->
+  <script src="<?php echo base_url(); ?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- iCheck -->
+  <script src="<?php echo base_url(); ?>assets/plugins/iCheck/icheck.min.js"></script>
+  <script>
+    $(function () {
+      $('input').iCheck({
+        checkboxClass: 'icheckbox_square-blue',
+        radioClass: 'iradio_square-blue',
+        increaseArea: '20%' /* optional */
+      });
     });
-  });
-</script>
+  </script>
 </body>
 </html>
-
