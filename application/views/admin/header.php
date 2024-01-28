@@ -22,18 +22,14 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/skins/_all-skins.min.css">
   
-
-  <!-- jQuery 3 -->
   <script src="<?php echo base_url(); ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
 
-  <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-purple sidebar-mini">
 <div class="wrapper">
 
   <header class="main-header">
-    <!-- Logo -->
     <a href="<?php echo base_url(); ?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <!-- logo for regular state and mobile devices -->
@@ -64,24 +60,23 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<?php echo base_url(); ?>assets/dist/img/admin1.jpg" class="user-image" alt="User Image">
+              <img src="<?php echo base_url(); ?>assets/dist/img/admin-user.png" class="user-image" alt="User Image">
               <span class="hidden-xs">Admin</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="<?php echo base_url(); ?>assets/dist/img/admin1.jpg" class="img-circle" alt="User Image">
+                <img src="<?php echo base_url(); ?>assets/dist/img/admin-user.png" class="img-circle" alt="User Image">
                 <p>Admin</p>
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-right">
-                  <a href="<?php echo base_url(); ?>logout" class="btn btn-default btn-flat">Sign out</a>
-                </div>
                 <div class="pull-left">
                   <a href="<?php echo base_url(); ?>" class="btn btn-default btn-flat">Profile</a>
                 </div>
-              </li>
+                <div class="pull-right">
+                  <a href="<?php echo base_url(); ?>logout" class="btn btn-default btn-flat">Sign out</a>
+                </div>                
               </li>
             </ul>
           </li>
@@ -185,7 +180,6 @@
         </li>
       </ul>
     </section>
-    <!-- /.sidebar -->
   </aside>
 
   <?php

@@ -22,31 +22,25 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/skins/_all-skins.min.css">
   
-
-  <!-- jQuery 3 -->
   <script src="<?php echo base_url(); ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
 
-  <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-purple sidebar-mini">
 <div class="wrapper">
 
   <header class="main-header">
-    <!-- Logo -->
     <a href="<?php echo base_url(); ?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>OM</b>S</span>
       <!-- logo for regular state and mobile devices -->
-      <img src="assets/dist/img/Logo.png" alt="Logo" height="140%">
+
+      <img src="assets/dist/img/Logo.png" alt="Logo" height="100%" width="100%">
       <span class="logo-lg"><b>Astray </b>Apps</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button"></a>
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
@@ -60,10 +54,7 @@
               <!-- User image -->
               <li class="user-header">
                 <img src="<?php echo base_url(); ?>assets/dist/img/userav.png" class="img-circle" alt="User Image">
-                <p>
-                  Employee
-                  <small>Since Nov, 2020</small>
-                </p>
+                <p>Employee<small>Since Nov, 2020</small></p>
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
@@ -85,7 +76,7 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- Sidebar user panel -->
-      <div class="user-panel">
+      <!-- <div class="user-panel">
         <div class="pull-left image">
           <img src="<?php echo base_url(); ?>assets/dist/img/userav.png" class="img-circle" alt="User Image">
         </div>
@@ -93,9 +84,9 @@
           <p>Employee Account</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
-      </div>
+      </div> -->
       <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
+      <!-- <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
           <span class="input-group-btn">
@@ -103,11 +94,10 @@
                 </button>
               </span>
         </div>
-      </form>
+      </form> -->
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">MAIN NAVIGATION</li>
+      <ul class="sidebar-menu" data-widget="tree">        
 
         <li class="active"><a href="<?php echo base_url(); ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 
@@ -126,7 +116,7 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-usd"></i> <span>Payroll</span>
+            <i class="fa fa-money"></i> <span>Payroll</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -151,7 +141,7 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-share"></i> <span>Leave Requests</span>
+            <i class="fa fa-clipboard"></i> <span>Leave Requests</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -164,42 +154,26 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-message"></i> <span>Messages</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+            <i class="fa fa-book"></i> <span>Messages</span>            
           </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url(); ?>add-salary"><i class="fa fa-circle-o"></i> Add Salary</a></li>
-            <li><a href="<?php echo base_url(); ?>manage-salary"><i class="fa fa-circle-o"></i> Manage Salary</a></li>
-          </ul>
         </li>
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-usd"></i> <span>Performance</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+            <i class="fa fa-bar-chart"></i> <span>Performance</span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url(); ?>add-salary"><i class="fa fa-circle-o"></i> Add Salary</a></li>
-            <li><a href="<?php echo base_url(); ?>manage-salary"><i class="fa fa-circle-o"></i> Manage Salary</a></li>
-          </ul>
         </li>
 
         <li class="treeview">
           <a href="<?php echo base_url(); ?>logout">
-            <i class="fa fa-share"></i> <span>Logout</span>
+            <i class="fa fa-arrow-circle-o-right"></i> <span>Logout</span>
             <span class="pull-right-container">              
             </span>
           </a>
         </li>
 
-
       </ul>
     </section>
-    <!-- /.sidebar -->
   </aside>
 
   <?php
