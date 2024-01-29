@@ -1,22 +1,16 @@
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+
     <section class="content-header">
-      <h1>
-        Dashboard        
-      </h1>
+      <h1>Dashboard</h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Dashboard</li>
       </ol>
     </section>
 
-    <!-- Main content -->
     <section class="content">
-      <!-- Small boxes (Stat box) -->
       <div class="row">
         <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
           <div class="small-box bg-primary">
             <div class="inner">
               <h3><?php 
@@ -28,7 +22,6 @@
                 echo 0;
               }
               ?></h3>
-
               <p>Departments</p>
             </div>
             <div class="icon">
@@ -37,9 +30,8 @@
             <a href="<?php echo base_url(); ?>manage-department" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
-        <!-- ./col -->
+
         <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
           <div class="small-box bg-maroon">
             <div class="inner">
               <h3><?php 
@@ -51,8 +43,7 @@
                 echo 0;
               }
               ?></h3>
-
-              <p>Employee</p>
+              <p>Employees</p>
             </div>
             <div class="icon">
               <i class="ionicons ion-android-contacts"></i>
@@ -60,9 +51,8 @@
             <a href="<?php echo base_url(); ?>manage-employee" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
-        <!-- ./col -->
+
         <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
               <h3><?php 
@@ -74,7 +64,6 @@
                 echo 0;
               }
               ?></h3>
-
               <p>Leave Requests</p>
             </div>
             <div class="icon">
@@ -83,9 +72,8 @@
             <a href="<?php echo base_url(); ?>approve-leave" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
-        <!-- ./col -->
+
         <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
               <h3>$<?php 
@@ -93,26 +81,20 @@
               {
                 foreach ($salary as $s) {
                   echo $s['total'];
-                }
-                
+                }                
               }
               else{
                 echo 0;
               }
               ?></h3>
-
-              <p>Salary Paid</p>
+              <p>Salary Payments</p>
             </div>
             <div class="icon">
               <i class="ionicons ion-social-usd"></i>
             </div>
             <a href="<?php echo base_url(); ?>manage-salary" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
-        </div>
-        <!-- ./col -->
+        </div>        
       </div>
-      <!-- /.row -->
     </section>
-    <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
