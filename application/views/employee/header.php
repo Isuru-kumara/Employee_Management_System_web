@@ -134,8 +134,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url(); ?>add-salary"><i class="fa fa-circle-o"></i> Add Salary</a></li>
-            <li><a href="<?php echo base_url(); ?>manage-salary"><i class="fa fa-circle-o"></i> Manage Salary</a></li>
+            <li><a href="<?php echo base_url(); ?>calendar"><i class="fa fa-circle-o"></i> Add Events</a></li>
+            <li><a href="<?php echo base_url(); ?>calendar"><i class="fa fa-circle-o"></i> Manage Events</a></li>
           </ul>
         </li>
 

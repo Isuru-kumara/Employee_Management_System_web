@@ -154,8 +154,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url(); ?>add-salary"><i class="fa fa-circle-o"></i> Add Event</a></li>
-            <li><a href="<?php echo base_url(); ?>manage-salary"><i class="fa fa-circle-o"></i> Manage Event</a></li>
+            <li><a href="<?php echo base_url(); ?>calendar"><i class="fa fa-circle-o"></i> Add Events</a></li>
+            <li><a href="<?php echo base_url(); ?>calendar"><i class="fa fa-circle-o"></i> Manage Events</a></li>
           </ul>
         </li>
 
@@ -175,7 +175,7 @@
         <li><a href="<?php echo base_url(); ?>add-salary"><i class="fa fa-bar-chart"></i> Performance</a></li>
         <li>
         <a href="<?php echo base_url(); ?>logout">
-            <i class="fa fa-arrow-circle-o-right btn btn"></i> <span>Logout</span>
+            <i class="fa fa-arrow-circle-o-right"></i> <span>Logout</span>
           </a>
         </li>
       </ul>
