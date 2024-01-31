@@ -80,6 +80,7 @@ $route['salary-invoice/(:num)'] = 'salary/invoice/$1';
 $route['print-invoice/(:num)'] = 'salary/invoice_print/$1';
 $route['delete-salary/(:num)'] = 'salary/delete/$1';
 
+//Leave routes
 $route['apply-leave'] = 'leave';
 $route['approve-leave'] = 'leave/approve';
 $route['leave-history'] = 'leave/manage';
@@ -87,3 +88,6 @@ $route['leave-approved/(:num)'] = 'leave/insert_approve/$1';
 $route['leave-rejected/(:num)'] = 'leave/insert_reject/$1';
 $route['view-leave'] = 'leave/view';
 $route['salaryinvoice/(:num)'] = 'salary/invoiceemployee/$1';
+
+//Calendar routes
+$route['calendar'] = 'calendar';
