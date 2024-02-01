@@ -25,6 +25,11 @@
   <script src="<?php echo base_url(); ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <style>
+    .rounded-border {
+      border-radius: 30px 0px 0px 30px;
+    }
+  </style>
 </head>
 <body class="hold-transition skin-purple sidebar-mini">
 <div class="wrapper">
@@ -104,11 +109,11 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
 
-        <li class="active"><a href="<?php echo base_url(); ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li class=""><a href="<?php echo base_url(); ?>">&nbsp;<i class="fa fa-dashboard"></i>&nbsp;&nbsp; <span>Dashboard</span></a></li>
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-user"></i> <span>Account</span>
+          &nbsp;&nbsp;<i class="fa fa-user"></i>&nbsp;&nbsp; <span>Employees</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -119,9 +124,9 @@
           </ul>
         </li>
 
-        <li class="treeview">
+        <li class="treeview active">
           <a href="#">
-            <i class="fa fa-bank"></i> <span>Departments</span>
+          &nbsp;<i class="fa fa-bank"></i>&nbsp;&nbsp; <span>Departments</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -131,11 +136,11 @@
             <li><a href="<?php echo base_url(); ?>manage-department"><i class="fa fa-circle-o"></i> Manage Departments</a></li>
           </ul>
         </li>
-        <li><a href="<?php echo base_url(); ?>add-employee"><i class="fa fa-calendar-plus-o"></i> Attendance</a></li>
+        <li class=""><a href="<?php echo base_url(); ?>add-employee">&nbsp;<i class="fa fa-calendar-plus-o"></i>&nbsp;&nbsp; Attendance</a></li>
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-money"></i> <span>Payroll</span>
+          &nbsp;<i class="fa fa-money"></i>&nbsp;&nbsp; <span>Payroll</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -148,7 +153,7 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-calendar"></i> <span>Calendar</span>
+          &nbsp;<i class="fa fa-calendar"></i>&nbsp;&nbsp; <span>Calendar</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -161,7 +166,7 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-clipboard"></i> <span>Leave Requests</span>
+          &nbsp;<i class="fa fa-clipboard"></i>&nbsp;&nbsp; <span>Leave Requests</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -171,13 +176,11 @@
             <li><a href="<?php echo base_url(); ?>leave-history"><i class="fa fa-circle-o"></i> Leave History</a></li>
           </ul>
         </li>
-        <li><a href="<?php echo base_url(); ?>add-salary"><i class="fa fa-book"></i> Messages</a></li>
-        <li><a href="<?php echo base_url(); ?>add-salary"><i class="fa fa-bar-chart"></i> Performance</a></li>
-        <li>
-        <a href="<?php echo base_url(); ?>logout">
-            <i class="fa fa-arrow-circle-o-right"></i> <span>Logout</span>
-          </a>
-        </li>
+        
+        <li class=""><a href="<?php echo base_url(); ?>chat">&nbsp;<i class="fa fa-book"></i>&nbsp;&nbsp; Messages</a></li>
+        <li class=""><a href="<?php echo base_url(); ?>add-salary">&nbsp;<i class="fa fa-bar-chart"></i>&nbsp;&nbsp; Performance</a></li>
+        <div class="container-fluid pt-5"></div><br><br><br>
+        <li><a href="<?php echo base_url(); ?>logout">&nbsp;<i class="fa fa-arrow-circle-o-right"></i>&nbsp;&nbsp; <span>Logout</span></a></li>
       </ul>
     </section>
   </aside>

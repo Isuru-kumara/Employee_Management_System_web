@@ -139,7 +139,7 @@
           </ul>
         </li>
 
-        <li class="treeview">
+        <li class="treeview active">
           <a href="#">
             <i class="fa fa-clipboard"></i> <span>Leave Requests</span>
             <span class="pull-right-container">
@@ -153,7 +153,7 @@
         </li>
 
         <li class="treeview">
-          <a href="#">
+        <a href="<?php echo base_url(); ?>chat">
             <i class="fa fa-book"></i> <span>Messages</span>            
           </a>
         </li>

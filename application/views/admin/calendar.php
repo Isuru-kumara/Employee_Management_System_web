@@ -2,8 +2,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
     <link rel="shortcut icon" href="img/favicon.png">
 
     <title>Calendar</title>
@@ -78,7 +76,7 @@
         }
     </style>
 </head>
-<div class="content-wrapper">
+    <div class="content-wrapper">
         <section class="content-header">
             <h1>Calendar</h1>
             <ol class="breadcrumb">
@@ -110,7 +108,7 @@
             <?php endif;?>
 
                 <div class="col-md-10">
-                    <div class="box box-success">
+                    <div class="box box-info">
                         <div class="box-body">
                             <div class="row">
                                 <div class="col-md-12">
@@ -122,21 +120,25 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="col-md-10 colors text-center">
-                    <div class="col-md-10 colors-div">
-                        <label class="color-scheme-text h3">Event Categories</label><br>
-                        <label class="color-text">Urgent Meetings</label><br>
-                        <input type="text" class="form-control" style="background:#FF0000;" required readonly>
+                    <div class="box box-info">
+                        <div class="box-body">
+                            <div class="col-md-12 colors-div">
+                                <label class="color-scheme-text h3">Event Categories</label><br>
+                                <label class="color-text">Urgent Meetings</label><br>
+                                <input type="text" class="form-control" style="background:#FF0000;" required readonly>
 
-                        <label class="color-text">Personal Schedule</label><br>
-                        <input type="text" class="form-control" style="background:#009222;" required readonly>
+                                <label class="color-text">Personal Schedule</label><br>
+                                <input type="text" class="form-control" style="background:#009222;" required readonly>
 
-                        <label class="color-text">Special Events</label><br>
-                        <input type="text" class="form-control" style="background:#FF6E33;" required readonly>
+                                <label class="color-text">Special Events</label><br>
+                                <input type="text" class="form-control" style="background:#FF6E33;" required readonly>
 
-                        <label class="color-text">Extra Holidays</label><br>
-                        <input type="text" class="form-control" style="background:#337ab7;" required readonly>
+                                <label class="color-text">Extra Holidays</label><br>
+                                <input type="text" class="form-control" style="background:#337ab7;" required readonly>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

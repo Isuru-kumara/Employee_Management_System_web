@@ -91,3 +91,6 @@ $route['salaryinvoice/(:num)'] = 'salary/invoiceemployee/$1';
 
 //Calendar routes
 $route['calendar'] = 'calendar';
+
+//Chat routes
+$route['chat'] = 'chat';
