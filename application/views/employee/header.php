@@ -99,22 +99,11 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">        
 
-        <li class="active"><a href="<?php echo base_url(); ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li class=""><a href="<?php echo base_url(); ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-user"></i> <span>Account</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url(); ?>add-employee"><i class="fa fa-circle-o"></i> Add Employee</a></li>
-            <li><a href="<?php echo base_url(); ?>manage-employee"><i class="fa fa-circle-o"></i> Manage Employee</a></li>
-          </ul>
-        </li>
+        <li class=""><a href="<?php echo base_url(); ?>add-employee"><i class="fa fa-user"></i>Account</a></li>
 
-        <li class="treeview">
+        <li class="treeview active">
           <a href="#">
             <i class="fa fa-money"></i> <span>Payroll</span>
             <span class="pull-right-container">
@@ -139,7 +128,7 @@
           </ul>
         </li>
 
-        <li class="treeview active">
+        <li class="treeview">
           <a href="#">
             <i class="fa fa-clipboard"></i> <span>Leave Requests</span>
             <span class="pull-right-container">
@@ -163,7 +152,7 @@
             <i class="fa fa-bar-chart"></i> <span>Performance</span>
           </a>
         </li>
-
+        <div class="container-fluid pt-5"></div><br><br><br>
         <li class="treeview">
           <a href="<?php echo base_url(); ?>logout">
             <i class="fa fa-arrow-circle-o-right"></i> <span>Logout</span>

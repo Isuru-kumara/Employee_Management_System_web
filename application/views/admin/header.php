@@ -109,7 +109,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
 
-        <li class=""><a href="<?php echo base_url(); ?>">&nbsp;<i class="fa fa-dashboard"></i>&nbsp;&nbsp; <span>Dashboard</span></a></li>
+        <li class="active"><a href="<?php echo base_url(); ?>">&nbsp;<i class="fa fa-dashboard"></i>&nbsp;&nbsp; <span>Dashboard</span></a></li>
 
         <li class="treeview">
           <a href="#">
@@ -124,7 +124,7 @@
           </ul>
         </li>
 
-        <li class="treeview active">
+        <li class="treeview">
           <a href="#">
           &nbsp;<i class="fa fa-bank"></i>&nbsp;&nbsp; <span>Departments</span>
             <span class="pull-right-container">
@@ -136,7 +136,7 @@
             <li><a href="<?php echo base_url(); ?>manage-department"><i class="fa fa-circle-o"></i> Manage Departments</a></li>
           </ul>
         </li>
-        <li class=""><a href="<?php echo base_url(); ?>add-employee">&nbsp;<i class="fa fa-calendar-plus-o"></i>&nbsp;&nbsp; Attendance</a></li>
+        <li class=""><a href="<?php echo base_url(); ?>manage-employee">&nbsp;<i class="fa fa-calendar-plus-o"></i>&nbsp;&nbsp; Attendance</a></li>
 
         <li class="treeview">
           <a href="#">
@@ -164,7 +164,7 @@
           </ul>
         </li>
 
-        <li class="treeview">
+        <li class="treeview ">
           <a href="#">
           &nbsp;<i class="fa fa-clipboard"></i>&nbsp;&nbsp; <span>Leave Requests</span>
             <span class="pull-right-container">
@@ -191,3 +191,15 @@
       redirect('login');
     }
   ?>
+
+<script>
+  $(document).ready(function () {
+    // Add active class to clicked list item
+    $('.sidebar-menu li').click(function () {
+      $('.sidebar-menu li').removeClass('active');
+      $(this).addClass('active');
+    });
+  });
+</script>
+
+</body>
