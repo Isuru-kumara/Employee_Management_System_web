@@ -2486,7 +2486,7 @@ a:focus {
 .nav-stacked > li > a {
   border-radius: 0;
   border-top: 0;
-  border-left: 3px solid transparent;
+  border-left: 3px solid transparent;  
   color: #444;
 }
 .nav-stacked > li.active > a,

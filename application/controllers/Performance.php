@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Calendar extends CI_Controller {
+class Performance extends CI_Controller {
 
     function __construct()
     {
@@ -15,14 +15,14 @@ class Calendar extends CI_Controller {
     public function index()
     {
         $this->load->view('admin/header');
-        $this->load->view('admin/calendar');
+        $this->load->view('admin/performance');
         $this->load->view('admin/footer');
     }
 
     public function view()
     {
         $this->load->view('employee/header');
-        $this->load->view('employee/view-events');
+        $this->load->view('employee/view-performance');
         $this->load->view('employee/footer');
     }
 

@@ -71,6 +71,7 @@ $route['insert-employee'] = 'employee/insert';
 $route['delete-employee/(:num)'] = 'employee/delete/$1';
 $route['edit-employee/(:num)'] = 'employee/edit/$1';
 $route['update-employee'] = 'employee/update';
+$route['view-employee'] = 'employee/view';
 
 //salary routes
 $route['add-salary'] = 'salary';
@@ -83,14 +84,22 @@ $route['delete-salary/(:num)'] = 'salary/delete/$1';
 //Leave routes
 $route['apply-leave'] = 'leave';
 $route['approve-leave'] = 'leave/approve';
-$route['leave-history'] = 'leave/manage';
+$route['manage-leave'] = 'leave/manage';
 $route['leave-approved/(:num)'] = 'leave/insert_approve/$1';
 $route['leave-rejected/(:num)'] = 'leave/insert_reject/$1';
 $route['view-leave'] = 'leave/view';
 $route['salaryinvoice/(:num)'] = 'salary/invoiceemployee/$1';
 
+//Chat routes
+$route['manage-attendance'] = 'attendance';
+
 //Calendar routes
 $route['calendar'] = 'calendar';
+$route['view-events'] = 'calendar/view';
 
 //Chat routes
 $route['chat'] = 'chat';
+$route['view-chat'] = 'chat/view';
+//Chat routes
+$route['performance'] = 'performance';
+$route['view-performance'] = 'performance/view';

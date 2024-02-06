@@ -1,4 +1,4 @@
-  <style>
+<style>
   .floatybox {
      display: inline-block;
      width: 123px;
@@ -10,7 +10,7 @@
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="#">Employee</a></li>
-        <li class="active">Edit Employee</li>
+        <li class="active">View Employee</li>
       </ol>
     </section>
 
@@ -44,7 +44,7 @@
         <div class="col-md-12">
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Edit Employee</h3>
+              <h3 class="box-title">View Employee</h3>
             </div>
 
             <?php if(isset($content)): ?>

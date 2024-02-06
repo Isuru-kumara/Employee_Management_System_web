@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Employee extends CI_Controller {
+class Attendance extends CI_Controller {
 
     function __construct()
     {
@@ -17,17 +17,8 @@ class Employee extends CI_Controller {
         $data['department']=$this->Department_model->select_departments();
         $data['country']=$this->Home_model->select_countries();
         $this->load->view('admin/header');
-        $this->load->view('admin/add-employee',$data);
+        $this->load->view('admin/manage-attendance',$data);
         $this->load->view('admin/footer');
-    }
-
-    public function view()
-    {
-        $employee=$this->session->userdata('userid');
-        $data['content']=$this->Employee_model->select_employee_byDept($employee);
-        $this->load->view('employee/header');
-        $this->load->view('employee/view-employee',$data);
-        $this->load->view('employee/footer');
     }
 
     public function manage()
