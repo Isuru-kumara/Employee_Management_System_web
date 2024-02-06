@@ -2,7 +2,6 @@
   .floatybox {
      display: inline-block;
      width: 123px;
-  }
   </style>
   <div class="content-wrapper">
     <section class="content-header">
@@ -42,6 +41,7 @@
         <?php endif;?>
 
         <div class="col-md-12">
+
           <div class="box box-info">
             <div class="box-header with-border">
               <h3 class="box-title">Edit Employee</h3>
@@ -49,6 +49,7 @@
 
             <?php if(isset($content)): ?>
               <?php foreach($content as $cnt): ?>
+
                   <?php echo form_open_multipart('Employee/update');?>
                     <div class="box-body">
 
@@ -191,6 +192,7 @@
                           </select>
                         </div>
                       </div>
+
                       <div class="col-md-6">
                         <div class="form-group">
                           <label>Address</label>
@@ -198,6 +200,7 @@
                         </div>
                       </div>                      
                     </div>
+
                     <div class="box-footer">
                       <button type="submit" class="btn btn-success pull-right">Submit</button>
                     </div>
@@ -209,3 +212,4 @@
       </div>
     </section>
   </div>
+
