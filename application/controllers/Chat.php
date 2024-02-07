@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Calendar extends CI_Controller {
+class Chat extends CI_Controller {
 
     function __construct()
     {
@@ -15,14 +15,14 @@ class Calendar extends CI_Controller {
     public function index()
     {
         $this->load->view('admin/header');
-        $this->load->view('admin/calendar');
+        $this->load->view('admin/chat');
         $this->load->view('admin/footer');
     }
 
     public function view()
     {
         $this->load->view('employee/header');
-        $this->load->view('employee/view-events');
+        $this->load->view('employee/view-chat');
         $this->load->view('employee/footer');
     }
 

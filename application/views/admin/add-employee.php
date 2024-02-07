@@ -1,18 +1,13 @@
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+   <div class="content-wrapper">
     <section class="content-header">
-      <h1>
-        Employee Management
-      </h1>
+      <h1>Employee</h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Employee Management</a></li>
+        <li><a href="#">Employee</a></li>
         <li class="active">Add Employee</li>
       </ol>
     </section>
 
-    <!-- Main content -->
     <section class="content">
       <div class="row">
 
@@ -40,15 +35,11 @@
           </div>
         <?php endif;?>
 
-        <!-- column -->
         <div class="col-md-12">
-          <!-- general form elements -->
           <div class="box box-info">
             <div class="box-header with-border">
               <h3 class="box-title">Add Employee</h3>
             </div>
-            <!-- /.box-header -->
-            <!-- form start -->
             <?php echo form_open_multipart('Employee/insert');?>
               <div class="box-body">
                 <div class="col-md-6">
@@ -163,18 +154,12 @@
                 </div>
                 
               </div>
-              <!-- /.box-body -->
               <div class="box-footer">
                 <button type="submit" class="btn btn-success pull-right">Submit</button>
               </div>
             </form>
           </div>
-          <!-- /.box -->
         </div>
-        <!--/.col (left) -->
       </div>
-      <!-- /.row -->
     </section>
-    <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->

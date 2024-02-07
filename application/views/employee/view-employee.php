@@ -1,7 +1,8 @@
-  <style>
+<style>
   .floatybox {
      display: inline-block;
      width: 123px;
+  }
   </style>
   <div class="content-wrapper">
     <section class="content-header">
@@ -9,7 +10,7 @@
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="#">Employee</a></li>
-        <li class="active">Edit Employee</li>
+        <li class="active">View Employee</li>
       </ol>
     </section>
 
@@ -41,15 +42,13 @@
         <?php endif;?>
 
         <div class="col-md-12">
-
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Edit Employee</h3>
+              <h3 class="box-title">View Employee</h3>
             </div>
 
             <?php if(isset($content)): ?>
               <?php foreach($content as $cnt): ?>
-
                   <?php echo form_open_multipart('Employee/update');?>
                     <div class="box-body">
 
@@ -192,7 +191,6 @@
                           </select>
                         </div>
                       </div>
-
                       <div class="col-md-6">
                         <div class="form-group">
                           <label>Address</label>
@@ -200,7 +198,6 @@
                         </div>
                       </div>                      
                     </div>
-
                     <div class="box-footer">
                       <button type="submit" class="btn btn-success pull-right">Submit</button>
                     </div>
@@ -212,4 +209,3 @@
       </div>
     </section>
   </div>
-
