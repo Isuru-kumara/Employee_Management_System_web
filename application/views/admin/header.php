@@ -66,7 +66,8 @@
   <aside class="main-sidebar">
     <section class="sidebar">
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="active"><a href="<?php echo base_url(); ?>">&nbsp;<i class="fa fa-dashboard"></i>&nbsp;&nbsp; <span>Dashboard</span></a></li>
+        <li class=""><a href="<?php echo base_url(); ?>">&nbsp;<i class="fa fa-dashboard"></i>&nbsp;&nbsp; <span>Dashboard</span></a></li>
+        <li class=""><a href="<?php echo base_url(); ?>manage-attendance">&nbsp;<i class="fa fa-calendar-plus-o"></i>&nbsp;&nbsp; Attendance</a></li>
 
         <li class="treeview">
           <a href="#">
@@ -93,7 +94,7 @@
             <li><a href="<?php echo base_url(); ?>manage-department"><i class="fa fa-circle-o"></i> Manage Departments</a></li>
           </ul>
         </li>
-        <li class=""><a href="<?php echo base_url(); ?>manage-attendance">&nbsp;<i class="fa fa-calendar-plus-o"></i>&nbsp;&nbsp; Attendance</a></li>
+        
 
         <li class="treeview">
           <a href="#">

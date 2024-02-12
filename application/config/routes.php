@@ -90,8 +90,13 @@ $route['leave-rejected/(:num)'] = 'leave/insert_reject/$1';
 $route['view-leave'] = 'leave/view';
 $route['salaryinvoice/(:num)'] = 'salary/invoiceemployee/$1';
 
-//Chat routes
-$route['manage-attendance'] = 'attendance';
+//Attendance
+$route['attendance'] = 'attendance';
+$route['attendance_page'] = 'attendance/page';
+$route['manage-attendance'] = 'attendance/view';
+$route['add-attendance'] = 'attendance/add';
+$route['edit-attendance'] = 'attendance/edit';
+$route['delete-attendance'] = 'attendance/delete';
 
 //Calendar routes
 $route['calendar'] = 'calendar';

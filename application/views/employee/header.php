@@ -56,7 +56,8 @@
   <aside class="main-sidebar">
     <section class="sidebar">
       <ul class="sidebar-menu" data-widget="tree">      
-        <li class="active"><a href="<?php echo base_url(); ?>">&nbsp;<i class="fa fa-dashboard"></i>&nbsp;&nbsp; <span>Dashboard</span></a></li>
+        <li class=""><a href="<?php echo base_url(); ?>">&nbsp;<i class="fa fa-dashboard"></i>&nbsp;&nbsp; <span>Dashboard</span></a></li>
+        <li class=""><a href="<?php echo base_url(); ?>attendance">&nbsp;<i class="fa fa-calendar-plus-o"></i>&nbsp;&nbsp; <span>Attendance</span></a></li>
         <li class="treeview">
           <a href="#">
           &nbsp;<i class="fa fa-user"></i>&nbsp;&nbsp; <span>Account</span>
