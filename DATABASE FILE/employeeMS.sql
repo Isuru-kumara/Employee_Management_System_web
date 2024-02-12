@@ -31,7 +31,7 @@ CREATE TABLE `admin` (
   `id` int(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(140) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `admin`
@@ -50,7 +50,7 @@ CREATE TABLE `country_tbl` (
   `id` int(11) NOT NULL,
   `country_code` varchar(2) NOT NULL DEFAULT '',
   `country_name` varchar(100) NOT NULL DEFAULT ''
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `country_tbl`
@@ -314,7 +314,7 @@ CREATE TABLE `department_tbl` (
   `id` int(11) NOT NULL,
   `department_name` varchar(100) NOT NULL,
   `added_on` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `department_tbl`
@@ -325,8 +325,7 @@ INSERT INTO `department_tbl` (`id`, `department_name`, `added_on`) VALUES
 (2, 'Back-End Development', '2021-05-27 15:22:55'),
 (3, 'Designing', '2019-10-04 05:25:15'),
 (4, 'Front-End Development', '2021-05-27 13:53:48'),
-(5, 'Marketing', '2021-05-27 16:48:45'),
-(6, 'Finance', '2021-05-27 17:27:43');
+(5, 'Marketing', '2021-05-27 16:48:45');
 
 -- --------------------------------------------------------
 
@@ -351,7 +350,7 @@ CREATE TABLE `employee_tbl` (
   `added_by` int(11) NOT NULL,
   `updated_on` date NOT NULL,
   `added_on` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `employee_tbl`
@@ -367,7 +366,9 @@ INSERT INTO `employee_tbl` (`id`, `employee_name`, `gender`, `email`, `mobile`, 
 (8, 'Mark Heiden', 'Male', 'markh@gmail.com', 7070707069, '1990-02-12', '2021-02-04', '2190  Laurel Lane', 'Midland', 'TX', 'United States', 2, 'pauptr.jpg', 1, '0000-00-00', '2021-05-27 16:53:57'),
 (9, 'Angela Bridges', 'Female', 'angela@gmail.com', 7417417417, '1992-02-11', '2021-03-05', '3538 Melville Street', 'Jackson', 'TN', 'United States', 6, 'sm-freeimg.jpg', 1, '0000-00-00', '2021-05-27 17:29:36'),
 (10, 'isuru kolongahapitiya', 'Male', 'isuru@gmail.com', 765551064, '1999-05-15', '2024-01-20', 'A/3, Walgama, Yatagama, Rambukkana', 'Kegalle', 'Rambukkana', 'Sri Lanka', 4, '169458951.jpg', 1, '0000-00-00', '2024-01-19 21:00:48'),
-(11, 'Teshan Wijewardhana', 'Male', 'teshanwijewardhana@gmail.com', 712583072, '2000-07-19', '2024-01-28', '712/10/18, Romiyel Street, Homagama.', 'Homagama', 'Western', 'Sri Lanka', 4, 'photo1.png', 1, '0000-00-00', '2024-01-28 14:00:43');
+(11, 'Teshan Wijewardhana', 'Male', 'teshanwijewardhana@gmail.com', 712583072, '2000-07-19', '2024-01-28', '712/10/18, Romiyel Street, Homagama.', 'Homagama', 'Western', 'Sri Lanka', 4, 'photo1.png', 1, '0000-00-00', '2024-01-28 14:00:43'),
+(12, 'Pemini Imasha', 'Female', 'pemini139@gmail.com', 701971625, '2000-11-22', '2016-12-18', '195/2 hokandara south', 'colombo', 'western', 'Sri Lanka', 1, 'default-pic.jpg', 1, '0000-00-00', '2024-01-31 14:49:56');
+
 
 -- --------------------------------------------------------
 
@@ -385,7 +386,7 @@ CREATE TABLE `events_demo` (
   `end` datetime DEFAULT NULL,
   `status` int(11) DEFAULT NULL,
   `t_stamp` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `events_demo`
@@ -422,7 +423,7 @@ CREATE TABLE `leave_tbl` (
   `leave_to` date NOT NULL,
   `updated_on` date NOT NULL,
   `applied_on` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `leave_tbl`
@@ -434,7 +435,10 @@ INSERT INTO `leave_tbl` (`id`, `employee_id`, `leave_reason`, `description`, `st
 (3, 6, 'Day Off', 'Requesting for a day off as I need to join my pal\'s wedding!', 1, '2021-05-28', '2021-05-29', '0000-00-00', '2021-05-27'),
 (4, 3, 'Casual Leave', 'for vacation, rest, and family events', 2, '2021-05-30', '2021-06-06', '0000-00-00', '2021-05-27'),
 (5, 9, 'Quarantine', 'i need to quarantine myself for few weeks as i got some symptoms of covid-19', 1, '2021-05-28', '2021-06-11', '0000-00-00', '2021-05-27'),
-(6, 5, 'nikan', 'bnhmjklikkkjjh', 2, '2024-01-20', '2024-01-27', '0000-00-00', '2024-01-19');
+(6, 5, 'nikan', 'bnhmjklikkkjjh', 2, '2024-01-20', '2024-01-27', '0000-00-00', '2024-01-19'),
+(7, 12, '', '', 0, '0000-00-00', '0000-00-00', '0000-00-00', '2024-02-06'),
+(8, 12, 'blaldkijcu', 'eelelelelll', 0, '2023-01-11', '2023-11-11', '0000-00-00', '2024-02-06'),
+(9, 12, '', '', 0, '0000-00-00', '0000-00-00', '0000-00-00', '2024-02-06');
 
 -- --------------------------------------------------------
 
@@ -448,7 +452,7 @@ CREATE TABLE `login_tbl` (
   `password` varchar(80) NOT NULL,
   `usertype` int(11) NOT NULL,
   `status` int(11) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `login_tbl`
@@ -465,7 +469,8 @@ INSERT INTO `login_tbl` (`id`, `username`, `password`, `usertype`, `status`) VAL
 (8, 'markh@gmail.com', '7070707069', 2, 1),
 (9, 'angela@gmail.com', '7417417417', 2, 1),
 (10, 'isuru', '1234', 2, 1),
-(11, 'teshanwijewardhana@gmail.com', '0712583072', 2, 1);
+(11, 'teshanwijewardhana@gmail.com', '0712583072', 2, 1),
+(12, 'pemini139@gmail.com', '0701971625', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -481,7 +486,8 @@ CREATE TABLE `member_rss` (
   `email` varchar(300) NOT NULL,
   `role` varchar(30) NOT NULL,
   `status` int(10) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
 
 --
 -- Dumping data for table `member_rss`
@@ -500,6 +506,30 @@ INSERT INTO `member_rss` (`member_id`, `member_first`, `username`, `password`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `request_tbl`
+--
+
+CREATE TABLE `request_tbl` (
+  `FullName` text NOT NULL,
+  `EmployeeID` int(200) NOT NULL,
+  `DateJoining` date NOT NULL,
+  `Email` varchar(250) NOT NULL,
+  `Department` varchar(100) NOT NULL,
+  `Address` varchar(200) NOT NULL,
+  `Status` int(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `request_tbl`
+--
+
+INSERT INTO `request_tbl` (`FullName`, `EmployeeID`, `DateJoining`, `Email`, `Department`, `Address`, `Status`) VALUES
+('Pemini Imasha', 11451, '2024-01-02', 'pe@gmail.com', '', '282/A, Vidyaraja mawatha\r\nHokandara south', 0),
+('uvini', 12345, '2011-11-11', 'uv@gmail.com', '', '1 welimada', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `salary_tbl`
 --
 
@@ -512,7 +542,7 @@ CREATE TABLE `salary_tbl` (
   `added_by` int(11) NOT NULL,
   `updated_on` date NOT NULL,
   `added_on` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `salary_tbl`
@@ -582,6 +612,13 @@ ALTER TABLE `member_rss`
   ADD PRIMARY KEY (`member_id`);
 
 --
+-- Indexes for table `request_tbl`
+--
+ALTER TABLE `request_tbl`
+  ADD PRIMARY KEY (`EmployeeID`);
+
+--
+
 -- Indexes for table `salary_tbl`
 --
 ALTER TABLE `salary_tbl`
@@ -607,7 +644,7 @@ ALTER TABLE `department_tbl`
 -- AUTO_INCREMENT for table `employee_tbl`
 --
 ALTER TABLE `employee_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `events_demo`
@@ -619,19 +656,26 @@ ALTER TABLE `events_demo`
 -- AUTO_INCREMENT for table `leave_tbl`
 --
 ALTER TABLE `leave_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `login_tbl`
 --
 ALTER TABLE `login_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 
 --
 -- AUTO_INCREMENT for table `member_rss`
 --
 ALTER TABLE `member_rss`
   MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `request_tbl`
+--
+ALTER TABLE `request_tbl`
+  MODIFY `EmployeeID` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12346;
 
 --
 -- AUTO_INCREMENT for table `salary_tbl`

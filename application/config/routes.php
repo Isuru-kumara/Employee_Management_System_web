@@ -90,6 +90,12 @@ $route['leave-rejected/(:num)'] = 'leave/insert_reject/$1';
 $route['view-leave'] = 'leave/view';
 $route['salaryinvoice/(:num)'] = 'salary/invoiceemployee/$1';
 
+//request routes
+$route['view-request'] = 'request/index';
+$route['request'] = 'request/approve';
+$route['delete-request/(:num)'] = 'request/delete/$1';
+$route['request/upload_pdf'] = 'request/upload_pdf';
+
 //Attendance
 $route['attendance'] = 'attendance';
 $route['attendance_page'] = 'attendance/page';
@@ -105,6 +111,8 @@ $route['view-events'] = 'calendar/view';
 //Chat routes
 $route['chat'] = 'chat';
 $route['view-chat'] = 'chat/view';
-//Chat routes
+
+//Performance routes
 $route['performance'] = 'performance';
 $route['view-performance'] = 'performance/view';
+
