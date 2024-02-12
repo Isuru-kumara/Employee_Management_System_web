@@ -71,6 +71,7 @@ $route['insert-employee'] = 'employee/insert';
 $route['delete-employee/(:num)'] = 'employee/delete/$1';
 $route['edit-employee/(:num)'] = 'employee/edit/$1';
 $route['update-employee'] = 'employee/update';
+$route['view-employee'] = 'employee/view';
 
 //salary routes
 $route['add-salary'] = 'salary';
@@ -80,10 +81,10 @@ $route['salary-invoice/(:num)'] = 'salary/invoice/$1';
 $route['print-invoice/(:num)'] = 'salary/invoice_print/$1';
 $route['delete-salary/(:num)'] = 'salary/delete/$1';
 
-//leave routes
+//Leave routes
 $route['apply-leave'] = 'leave';
 $route['approve-leave'] = 'leave/approve';
-$route['leave-history'] = 'leave/manage';
+$route['manage-leave'] = 'leave/manage';
 $route['leave-approved/(:num)'] = 'leave/insert_approve/$1';
 $route['leave-rejected/(:num)'] = 'leave/insert_reject/$1';
 $route['view-leave'] = 'leave/view';
@@ -94,3 +95,24 @@ $route['view-request'] = 'request/index';
 $route['request'] = 'request/approve';
 $route['delete-request/(:num)'] = 'request/delete/$1';
 $route['request/upload_pdf'] = 'request/upload_pdf';
+
+//Attendance
+$route['attendance'] = 'attendance';
+$route['attendance_page'] = 'attendance/page';
+$route['manage-attendance'] = 'attendance/view';
+$route['add-attendance'] = 'attendance/add';
+$route['edit-attendance'] = 'attendance/edit';
+$route['delete-attendance'] = 'attendance/delete';
+
+//Calendar routes
+$route['calendar'] = 'calendar';
+$route['view-events'] = 'calendar/view';
+
+//Chat routes
+$route['chat'] = 'chat';
+$route['view-chat'] = 'chat/view';
+
+//Performance routes
+$route['performance'] = 'performance';
+$route['view-performance'] = 'performance/view';
+
