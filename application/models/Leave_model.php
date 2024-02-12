@@ -13,7 +13,7 @@ class Leave_model extends CI_Model {
     function select_leave()
     {
         $this->db->order_by('leave_tbl.id','DESC');
-        $this->db->select("leave_tbl.*,employee_tbl.pic,employee_tbl.employee_name,employee_tbl.city,employee_tbl.state,employee_tbl.country,employee_tbl.mobile,employee_tbl.email,department_tbl.department_name");
+        $this->db->select("leave_tbl.*,employee_tbl.pic,employee_tbl.employee_name,employee_tbl.city,employee_tbl.country,employee_tbl.mobile,employee_tbl.email,department_tbl.department_name");
         $this->db->from("leave_tbl");
         $this->db->join("employee_tbl",'employee_tbl.id=leave_tbl.employee_id');
         $this->db->join("department_tbl",'department_tbl.id=employee_tbl.department_id');
@@ -41,7 +41,7 @@ class Leave_model extends CI_Model {
     {
         $this->db->order_by('leave_tbl.id','DESC');
         $this->db->where('leave_tbl.employee_id',$employeeid);
-        $this->db->select("leave_tbl.*,employee_tbl.employee_name,employee_tbl.city,employee_tbl.state,employee_tbl.country,employee_tbl.mobile,employee_tbl.email,department_tbl.department_name");
+        $this->db->select("leave_tbl.*,employee_tbl.employee_name,employee_tbl.city,employee_tbl.country,employee_tbl.mobile,employee_tbl.email,department_tbl.department_name");
         $this->db->from("leave_tbl");
         $this->db->join("employee_tbl",'employee_tbl.id=leave_tbl.employee_id');
         $this->db->join("department_tbl",'department_tbl.id=employee_tbl.department_id');
@@ -56,7 +56,7 @@ class Leave_model extends CI_Model {
     function select_leave_forApprove()
     {
         $this->db->where('leave_tbl.status',0);
-        $this->db->select("leave_tbl.*,employee_tbl.pic,employee_tbl.employee_name,employee_tbl.city,employee_tbl.state,employee_tbl.country,employee_tbl.mobile,employee_tbl.email,department_tbl.department_name");
+        $this->db->select("leave_tbl.*,employee_tbl.pic,employee_tbl.employee_name,employee_tbl.city,employee_tbl.country,employee_tbl.mobile,employee_tbl.email,department_tbl.department_name");
         $this->db->from("leave_tbl");
         $this->db->join("employee_tbl",'employee_tbl.id=leave_tbl.employee_id');
         $this->db->join("department_tbl",'department_tbl.id=employee_tbl.department_id');
