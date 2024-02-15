@@ -61,9 +61,13 @@
                       <td><?php echo $cnt['FullName']; ?></td>
                       <td>
                         <!--add path here to upload -->
+                        <form action="<?php echo base_url('Request/upload_pdf'); ?>" method="POST" enctype="multipart/form-data" >
+                        
                           <input type="hidden" name="employee_id" value="<?php echo $cnt['EmployeeID']; ?>">
                           <input type="file" name="pdf_file" class="form-control">
+                          
                           <button type="submit" class="btn btn-success">Upload</button>
+                        </form>
                         <!-- -->
                         <a href="<?php echo base_url(); ?>delete-request/<?php echo $cnt['EmployeeID']; ?>" class="btn btn-danger">Delete</a>
                       </td>
