@@ -1,5 +1,5 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
@@ -369,6 +369,7 @@ INSERT INTO `employee_tbl` (`id`, `employee_name`, `gender`, `email`, `mobile`, 
 (11, 'Teshan Wijewardhana', 'Male', 'teshanwijewardhana@gmail.com', 712583072, '2000-07-19', '2024-01-28', '712/10/18, Romiyel Street, Homagama.', 'Homagama', 'Western', 'Sri Lanka', 4, 'photo1.png', 1, '0000-00-00', '2024-01-28 14:00:43'),
 (12, 'Pemini Imasha', 'Female', 'pemini139@gmail.com', 701971625, '2000-11-22', '2016-12-18', '195/2 hokandara south', 'colombo', 'western', 'Sri Lanka', 1, 'default-pic.jpg', 1, '0000-00-00', '2024-01-31 14:49:56');
 
+
 -- --------------------------------------------------------
 
 --
@@ -486,6 +487,7 @@ CREATE TABLE `member_rss` (
   `role` varchar(30) NOT NULL,
   `status` int(10) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
 
 --
 -- Dumping data for table `member_rss`
@@ -642,6 +644,7 @@ ALTER TABLE `request_tbl`
   ADD PRIMARY KEY (`EmployeeID`);
 
 --
+
 -- Indexes for table `salary_tbl`
 --
 ALTER TABLE `salary_tbl`
@@ -686,6 +689,7 @@ ALTER TABLE `leave_tbl`
 --
 ALTER TABLE `login_tbl`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 
 --
 -- AUTO_INCREMENT for table `member_rss`

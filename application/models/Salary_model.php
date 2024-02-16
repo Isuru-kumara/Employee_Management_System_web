@@ -28,7 +28,7 @@ class Salary_model extends CI_Model {
     function select_salary_byID($id)
     {
         $this->db->where('salary_tbl.id',$id);
-        $this->db->select("salary_tbl.*,employee_tbl.employee_name,employee_tbl.city,employee_tbl.state,employee_tbl.country,employee_tbl.mobile,employee_tbl.email,department_tbl.department_name");
+        $this->db->select("salary_tbl.*,employee_tbl.employee_name,employee_tbl.city,employee_tbl.country,employee_tbl.mobile,employee_tbl.email,department_tbl.department_name");
         $this->db->from("salary_tbl");
         $this->db->join("employee_tbl",'employee_tbl.id=salary_tbl.employee_id');
         $this->db->join("department_tbl",'department_tbl.id=employee_tbl.department_id');
@@ -43,7 +43,7 @@ class Salary_model extends CI_Model {
     function select_salary_byEmployeeID($employeeid)
     {
         $this->db->where('salary_tbl.employee_id',$employeeid);
-        $this->db->select("salary_tbl.*,employee_tbl.employee_name,employee_tbl.city,employee_tbl.state,employee_tbl.country,employee_tbl.mobile,employee_tbl.email,department_tbl.department_name");
+        $this->db->select("salary_tbl.*,employee_tbl.employee_name,employee_tbl.city,employee_tbl.country,employee_tbl.mobile,employee_tbl.email,department_tbl.department_name");
         $this->db->from("salary_tbl");
         $this->db->join("employee_tbl",'employee_tbl.id=salary_tbl.employee_id');
         $this->db->join("department_tbl",'department_tbl.id=employee_tbl.department_id');

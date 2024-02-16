@@ -21,6 +21,15 @@ class Employee extends CI_Controller {
         $this->load->view('admin/footer');
     }
 
+    public function view()
+    {
+        $employee=$this->session->userdata('userid');
+        $data['content']=$this->Employee_model->select_employee_byDept($employee);
+        $this->load->view('employee/header');
+        $this->load->view('employee/view-employee',$data);
+        $this->load->view('employee/footer');
+    }
+
     public function manage()
     {
         $data['content']=$this->Employee_model->select_employee();
