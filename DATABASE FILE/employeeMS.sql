@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 29, 2024 at 08:18 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Feb 15, 2024 at 06:24 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -506,6 +506,26 @@ INSERT INTO `member_rss` (`member_id`, `member_first`, `username`, `password`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `reqletter_tbl`
+--
+
+CREATE TABLE `reqletter_tbl` (
+  `id` int(200) NOT NULL,
+  `emp_name` text NOT NULL,
+  `file_name` varchar(100) NOT NULL,
+  `upload_date` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `reqletter_tbl`
+--
+
+INSERT INTO `reqletter_tbl` (`id`, `emp_name`, `file_name`, `upload_date`) VALUES
+(1, '11451', 'Chief_Manager1.pdf', '2024-02-13 14:05:39');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `request_tbl`
 --
 
@@ -612,6 +632,12 @@ ALTER TABLE `member_rss`
   ADD PRIMARY KEY (`member_id`);
 
 --
+-- Indexes for table `reqletter_tbl`
+--
+ALTER TABLE `reqletter_tbl`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `request_tbl`
 --
 ALTER TABLE `request_tbl`
@@ -670,6 +696,12 @@ ALTER TABLE `login_tbl`
 --
 ALTER TABLE `member_rss`
   MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `reqletter_tbl`
+--
+ALTER TABLE `reqletter_tbl`
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `request_tbl`

@@ -90,26 +90,37 @@ class Request extends CI_Controller {
     }
 
     public function upload_pdf() {
-        $config['upload_path'] = FCPATH . 'uploads/req-letters/';
+        $this->load->library('upload');
+        $config['upload_path'] = './uploads/req-letters/';
         $config['allowed_types'] = 'pdf';
-        $config['max_size'] = 10240; // Maximum file size in KB (10MB)
-        $this->load->library('upload', $config);
-        
+        $config['max_size'] = 10240; // 10MB
+        $this->upload->initialize($config);
+    
         if ($this->upload->do_upload('pdf_file')) {
             // File uploaded successfully
             $data = $this->upload->data();
             $pdf_path = $data['file_name']; // Get the file name
-            
-            // Save the file path to the database or perform other operations
-            
+    
+            // Get employee ID
+            $employee_id = $this->input->post('employee_id');
+    
+            // Insert data into the database
+            $pdf_data = array(
+                'emp_name' => $employee_id, // Modify this to your employee name if needed
+                'file_name' => $pdf_path,
+                'upload_date' => date('Y-m-d H:i:s')
+            );
+            $this->db->insert('reqletter_tbl', $pdf_data);
+    
             $this->session->set_flashdata('success', 'PDF file uploaded successfully.');
         } else {
             // File upload failed
             $error = $this->upload->display_errors();
             $this->session->set_flashdata('error', $error);
         }
-        redirect('admin/request'); // Redirect back to the admin request page
+       redirect('request'); // Redirect back to the page with the upload form
     }
+    
     
 
 
