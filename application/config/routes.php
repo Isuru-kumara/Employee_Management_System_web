@@ -86,4 +86,23 @@ $route['leave-history'] = 'leave/manage';
 $route['leave-approved/(:num)'] = 'leave/insert_approve/$1';
 $route['leave-rejected/(:num)'] = 'leave/insert_reject/$1';
 $route['view-leave'] = 'leave/view';
+<<<<<<< Updated upstream
 $route['salaryinvoice/(:num)'] = 'salary/invoiceemployee/$1';
+=======
+$route['salaryinvoice/(:num)'] = 'salary/invoiceemployee/$1';
+
+//request routes
+$route['view-request'] = 'request/index';
+$route['request'] = 'request/approve';
+$route['delete-request/(:num)'] = 'request/delete/$1';
+$route['request/upload_pdf'] = 'request/upload_pdf';
+
+//letter routes
+$route['view-letters'] = 'Letter/index';
+$route['letters/view/(:num)'] = 'Letter/view_letter/$1';
+
+//Calendar routes
+$route['calendar'] = 'calendar/index';
+$route['view-events'] = 'calendar/view';
+
+>>>>>>> Stashed changes
