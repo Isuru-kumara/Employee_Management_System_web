@@ -1,81 +1,102 @@
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="img/favicon.png">
+<?php
 
-    <title>Calendar</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href='css/fullcalendarxx.min.css' rel='stylesheet' />
-    <link href='css/sweetalert.css' rel='stylesheet' />
-    <link href='css/AdminLTE.min.css' rel='stylesheet' />
+require_once('bdd.php');
+date_default_timezone_set("Asia/Manila");
 
-    <style>
-        #calendar {
-            max-width: 1300px;
-        }
-        .col-centered{
-            float: none;
-            margin: 0 auto;
-        }
-        .tooltip{
-            width:auto;
-            height:20%;
-            color:black;
-            background:#E5E5E5;
-            position:absolute;
-            z-index:10001;
-            border-radius:5px;
-            top: -300%;
-            left:50%;
-            padding:5px 10px;
-            margin-left:-60px;
-            bottom: 150%;
-            font-size: 15px;
-        }
-        .colors{
-            font-size: 14px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-            background: white;
-            /* border-style: solid;
-            border-width: 3px;
-            border-color: #C6CFD6;
-            border-radius:20px; */
-            height:500px;
-            width: 15%;
-            margin: 0px 0px;
-            padding: 0px 0px;
-        }
-        .colors-div{
-            font-size: 14px;
-            background: white;
-            /* border-style: solid;
-            border-width: 3px;
-            border-color: #C6CFD6;
-            border-radius:20px; */
-            padding: 5px;
-        }
-        .colors-header{
-            margin: 0 auto;
-            background-color:#379441;
-            width: 115%;
-            height: 9%;
-            padding: 10px;
-            border-style: solid;
-            border-top-left-radius: 18px;
-            border-top-right-radius: 18px;
-            border-color: transparent;
-            margin-left: -15px;
-        }
-        .color-scheme-text{
-            font-size: 14px;
+$sql = "SELECT id, title, start, end, color FROM events_demo ";
 
-        }
-        .color-text{
-            font-size: 12px;
-        }
-    </style>
-</head>
+$req = $bdd->prepare($sql);
+$req->execute();
+
+$events = $req->fetchAll();
+
+
+?>
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="img/favicon.png">
+
+        <title>Calendar</title>
+        <link href="/assets/dist/css/calendarStyles/bootstrap.min.css" rel="stylesheet">
+        <link href='/assets/dist/css/calendarStyles/fullcalendarxx.min.css' rel='stylesheet' />
+        <link href='/assets/dist/css/calendarStyles/sweetalert.css' rel='stylesheet' />
+        <link href='/assets/dist/css/calendarStyles/AdminLTE.min.css' rel='stylesheet' />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js"></script>
+
+        <style>
+            #calendar {
+                max-width: 1300px;
+            }
+            .col-centered{
+                float: none;
+                margin: 0 auto;
+            }
+            .tooltip{
+                width:auto;
+                height:20%;
+                color:black;
+                background:#E5E5E5;
+                position:absolute;
+                z-index:10001;
+                border-radius:5px;
+                top: -300%;
+                left:50%;
+                padding:5px 10px;
+                margin-left:-60px;
+                bottom: 150%;
+                font-size: 15px;
+            }
+            .colors{
+                font-size: 14px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+                background: white;
+                /* border-style: solid;
+                border-width: 3px;
+                border-color: #C6CFD6;
+                border-radius:20px; */
+                height:500px;
+                width: 15%;
+                margin: 0px 0px;
+                padding: 0px 0px;
+            }
+            .colors-div{
+                font-size: 14px;
+                background: white;
+                /* border-style: solid;
+                border-width: 3px;
+                border-color: #C6CFD6;
+                border-radius:20px; */
+                padding: 5px;
+            }
+            .colors-header{
+                margin: 0 auto;
+                background-color:#379441;
+                width: 115%;
+                height: 9%;
+                padding: 10px;
+                border-style: solid;
+                border-top-left-radius: 18px;
+                border-top-right-radius: 18px;
+                border-color: transparent;
+                margin-left: -15px;
+            }
+            .color-scheme-text{
+                font-size: 14px;
+
+            }
+            .color-text{
+                font-size: 12px;
+            }
+        </style>
+    </head>
+    <body>
     <div class="content-wrapper">
         <section class="content-header">
             <h1>Calendar</h1>
@@ -146,16 +167,20 @@
     </div>
 
     <?php include('modal.php');?>
+    </section>
+</div>
 
     <!-- Include your JavaScript files at the end of the body -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src='js/moment.min.js'></script>
-    <script src='js/fullcalendarxx.min.js'></script>
-    <script src='js/sweetalert.min.js'></script>
-    <script src='packages/list/main.js'></script>
+    <script src="/assets/dist/js/calendarScripts/jquery.js"></script>
+    <script src="/assets/dist/js/calendarScripts/bootstrap.min.js"></script>
+    <script src='/assets/dist/js/calendarScripts/moment.min.js'></script>
+    <script src='/assets/dist/js/calendarScripts/fullcalendar.min.js'></script>
+    <script src='/assets/dist/js/calendarScripts/fullcalendarxx.min.js'></script>
+    <script src='/assets/dist/js/calendarScripts/sweetalert.min.js'></script>
+    <script src='/assets/dist/js/calendarScripts/main.js'></script>
 
     <script>
+
         $(document).ready(function() {
             $('#calendar').fullCalendar({
             plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
@@ -233,8 +258,10 @@
                     $('.tooltip').remove();
                 },
 
+
                 events: [
                 <?php foreach($events as $event):
+
 
                     $start = explode(" ", $event['start']);
                     $end = explode(" ", $event['end']);
@@ -247,9 +274,9 @@
                         $end = $end[0];
                     }else{
                         $end = $event['end'];
-                    }   
+                    }
                     ?>
-                    ,{
+                    {
                         id: '<?php echo $event['id']; ?>',
                         title: '<?php echo $event['title']; ?>',
                         start: '<?php echo $start; ?>',
@@ -267,6 +294,7 @@
                 }else{
                     end = start;
                 }
+
                 id =  event.id;
                 Event = [];
                 Event[0] = id;
@@ -289,12 +317,13 @@
                 });
             }
 
-            function add(event){
+
+            /*function add(event){
             title = event.title;
             start = event.start;
             end = event.end;
             color = event.color;
-            if(event.end){
+            /* if(event.end){
                     end = event.end.format('YYYY-MM-DD HH:mm:ss');
                 }else{
                     end = start;
@@ -323,9 +352,10 @@
                         }
                     }
                 });
-            }
-            });
+            }*/
+
+        });
+
     </script>
-    </section>
-</div>
+    </body>
 </html>
