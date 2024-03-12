@@ -96,5 +96,27 @@
           </div>
         </div>        
       </div>
+      <div class="row">
+        <div class="col-lg-3 col-xs-6">
+          <div class="small-box bg-yellow">
+            <div class="inner">
+              <h3><?php 
+              if(isset($department))
+              {
+                echo sizeof($department);
+              }
+              else{
+                echo 0;
+              }
+              ?></h3>
+              <p>Requests</p>
+            </div>
+            <div class="icon">
+              <i class="ionicons ion-social-buffer"></i>
+            </div>
+            <a href="<?php echo base_url(); ?>request" class="small-box-footer">More Info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+      </div>
     </section>
   </div>

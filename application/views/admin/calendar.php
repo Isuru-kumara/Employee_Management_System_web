@@ -182,8 +182,6 @@ $events = $req->fetchAll();
     <script>
 
         $(document).ready(function() {
-
-
             $('#calendar').fullCalendar({
             plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
             header: {
@@ -201,19 +199,16 @@ $events = $req->fetchAll();
                 agendaWeek: { buttonText: 'Week' },
             },
             editable: true,
-        eventLimit: true, // allow "more" link when too many events
-        selectable: true,
-        selectHelper: true,
-        timeFormat:"h:mma",
-        defaultView:'month',
-        scrollTime: '08:00', // undo default 6am scrollTime
-        eventOverlap:false,
-        allDaySlot: false,
-
-
+            eventLimit: true, // allow "more" link when too many events
+            selectable: true,
+            selectHelper: true,
+            timeFormat:"h:mma",
+            defaultView:'month',
+            scrollTime: '08:00', // undo default 6am scrollTime
+            eventOverlap:false,
+            allDaySlot: false,
 
                 select: function(start, end) {
-
                     //$('#ModalAdd #start').val(moment(start).format('YYYY-MM-DD HH:mm:ss'));
                     $('#ModalAdd #start').val(moment(start).format('YYYY-MM-DD HH:mm:ss'));
                     $('#ModalAdd #end').val(moment(end).format('YYYY-MM-DD HH:mm:ss'));
@@ -230,20 +225,15 @@ $events = $req->fetchAll();
                     //	$('#ModalEdit #end').val(event.end);
                         $('#ModalEdit').modal('show');
                         //var formattedTime = $.fullCalendar.formatDates(event.start, event.end, "HH:mm { - HH:mm}");
-
-                        });
-
+                        }
+                    );
                 },
 
                 eventDrop: function(event, delta, revertFunc) { // si changement de position
-
                     edit(event);
-
                 },
                 eventResize: function(event,dayDelta,minuteDelta,revertFunc) { // si changement de longueur
-
                     edit(event);
-
                 },
 
                 eventMouseover: function(Event, jsEvent) {
@@ -297,7 +287,6 @@ $events = $req->fetchAll();
                 ]
             });
 
-
             function edit(event){
                 start = event.start.format('YYYY-MM-DD HH:mm:ss');
                 if(event.end){
@@ -307,7 +296,6 @@ $events = $req->fetchAll();
                 }
 
                 id =  event.id;
-
                 Event = [];
                 Event[0] = id;
                 Event[1] = start;
@@ -331,7 +319,6 @@ $events = $req->fetchAll();
 
 
             /*function add(event){
-
             title = event.title;
             start = event.start;
             end = event.end;
@@ -367,10 +354,8 @@ $events = $req->fetchAll();
                 });
             }*/
 
-
         });
 
     </script>
-
     </body>
 </html>

@@ -35,11 +35,11 @@
         <div class="col-sm-4 invoice-col">
           From
           <address>
-            <strong>Nano Tech</strong><br>
-            Bethany<br>
-            6964 Ralph Street<br>
-            Website: www.nanotech.com<br>
-            Email: admin@nanotech.com
+            <strong>Astray Apps</strong><br>
+            Kanishka<br>
+            718, King Street, Borella<br>
+            Website: www.astrayapps.com<br>
+            Email: kanishka@astrayapps.com
           </address>
         </div>
         <!-- /.col -->
@@ -99,7 +99,7 @@
           <img src="<?php echo base_url(); ?>assets/dist/img/credit/paypal2.png" alt="Paypal">
 
           <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
-          Dear <?php echo $cnt['employee_name']; ?>, Our Company has just processed your payments. Your payment has been deposited electronically in your account on <?php echo date('d-m-Y', strtotime($cnt['added_on'])); ?>
+          Dear <?php echo $cnt['employee_name']; ?>, Our Company has just processed your payments. Your payment has been deposited electronically in your account on<br> <?php echo date('d-m-Y', strtotime($cnt['added_on'])); ?>
           </p>
         </div>
         <!-- /.col -->
