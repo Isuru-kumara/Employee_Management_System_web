@@ -169,6 +169,7 @@ $events = $req->fetchAll();
     <?php include('modal.php');?>
     </section>
 </div>
+
     <script src="/assets/dist/js/calendarScripts/jquery.js"></script>
     <script src="/assets/dist/js/calendarScripts/bootstrap.min.js"></script>
     <script src='/assets/dist/js/calendarScripts/moment.min.js'></script>
@@ -329,7 +330,6 @@ $events = $req->fetchAll();
 
 
             /*function add(event){
-
             title = event.title;
             start = event.start;
             end = event.end;
@@ -364,11 +364,7 @@ $events = $req->fetchAll();
                     }
                 });
             }*/
-
-
         });
-
     </script>
-
     </body>
 </html>

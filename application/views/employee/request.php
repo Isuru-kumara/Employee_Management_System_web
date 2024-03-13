@@ -109,8 +109,7 @@
                 <button type="submit" class="btn btn-success pull-right">Submit</button>
               </div>
             </form>
-          </div>
-          <!-- /.box -->
+          </div>          
         </div>
         <!--/.col (left) -->
       </div>

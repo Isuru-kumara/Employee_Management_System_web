@@ -122,3 +122,8 @@ $route['search'] = 'Authenticate/loginData';
 $route['performance'] = 'performance';
 $route['view-performance'] = 'performance/view';
 
+//letter routes
+$route['view-letters'] = 'Letter/index';
+$route['letters/view/(:num)'] = 'Letter/view_letter/$1';
+
+

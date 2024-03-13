@@ -21,9 +21,6 @@ $title = $_POST['title'];
 	$start =	 $_POST['Event'][2];
 	$end = $_POST['Event'][3];
 	$color = 	 $_POST['Event'][4];*/
-
-
-
 			
 	$sql = "INSERT INTO events_demo(title, start, end, color,status) values ('$title', '$start', '$end', '$color',NULL)";
 	//$req = $bdd->prepare($sql);
@@ -37,15 +34,13 @@ $title = $_POST['title'];
 	}
 	$sth = $query->execute();
 
-
 	if ($sth == false) {
 	 print_r($query->errorInfo());
 	 die ('Erreur execute');
 	}
 }
-
 	
- if (isset($_POST['name']) && isset($_POST['username']) && isset($_POST['password'])){
+if (isset($_POST['name']) && isset($_POST['username']) && isset($_POST['password'])){
 
 $name = $_POST['name'];
 	$username = $_POST['username'];
@@ -66,18 +61,13 @@ $name = $_POST['name'];
 	}
 	$sth = $query->execute();
 
-
 	if ($sth == false) {
 	 print_r($query->errorInfo());
 	 die ('Erreur execute');
 	}
 }
 	
-
-
 header('Location: '.$_SERVER['HTTP_REFERER']);
-
-
 ?>
 
   <script src='js/sweetalert.min.js'></script>
