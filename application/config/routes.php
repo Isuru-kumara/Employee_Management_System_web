@@ -109,8 +109,14 @@ $route['calendar'] = 'calendar';
 $route['view-events'] = 'calendar/view';
 
 //Chat routes
-$route['chat'] = 'chat';
-$route['view-chat'] = 'chat/view';
+
+// $route['view-chat'] = 'message/view';
+$route['message'] = 'Message';
+// $route['logout'] = 'Message/logout';
+$route['sent'] = 'Message/sendMessage';
+$route['getmessage'] = 'Message/getMessage';
+$route['insert'] = 'Authenticate/signupData';
+$route['search'] = 'Authenticate/loginData';
 
 //Performance routes
 $route['performance'] = 'performance';

@@ -136,7 +136,7 @@
           </ul>
         </li>
         
-        <li class=""><a href="<?php echo base_url(); ?>chat">&nbsp;<i class="fa fa-book"></i>&nbsp;&nbsp; Messages</a></li>
+        <li class=""><a href="<?php echo base_url(); ?>message">&nbsp;<i class="fa fa-book"></i>&nbsp;&nbsp; Messages</a></li>
         <li class=""><a href="<?php echo base_url(); ?>performance">&nbsp;<i class="fa fa-bar-chart"></i>&nbsp;&nbsp; Performance</a></li>
         <div class="container-fluid pt-5"></div><br><br><br>
         <li><a href="<?php echo base_url(); ?>logout">&nbsp;<i class="fa fa-arrow-circle-o-right"></i>&nbsp;&nbsp; <span>Logout</span></a></li>
