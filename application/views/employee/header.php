@@ -1,3 +1,8 @@
+<?php
+	$image ='image';
+	$name ='employee_name';
+  $employee=$this->input->post('txtusername');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,12 +37,12 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo base_url(); ?>assets/dist/img/userav.png" class="user-image" alt="User Image">
-              <span class="hidden-xs">Employee</span>
+              <span class="hidden-xs"><?php echo $employee;?></span>
             </a>
             <ul class="dropdown-menu">
               <li class="user-header">
                 <img src="<?php echo base_url(); ?>assets/dist/img/userav.png" class="img-circle" alt="User Image">
-                <p>Employee<small>Since Nov, 2020</small></p>
+                <p><?php echo $employee;?><small>Since Nov, 2020</small></p>
               </li>
               <li class="user-footer">
                 <div class="pull-left">

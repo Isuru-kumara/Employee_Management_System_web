@@ -96,7 +96,34 @@ $route['request'] = 'request/approve';
 $route['delete-request/(:num)'] = 'request/delete/$1';
 $route['request/upload_pdf'] = 'request/upload_pdf';
 
+//Attendance
+$route['attendance'] = 'attendance';
+$route['attendance_page'] = 'attendance/page';
+$route['manage-attendance'] = 'attendance/view';
+$route['add-attendance'] = 'attendance/add';
+$route['edit-attendance'] = 'attendance/edit';
+$route['delete-attendance'] = 'attendance/delete';
+
+//Calendar routes
+$route['calendar'] = 'calendar';
+$route['view-events'] = 'calendar/view';
+
+//Chat routes
+
+// $route['view-chat'] = 'message/view';
+$route['message'] = 'Message';
+// $route['logout'] = 'Message/logout';
+$route['sent'] = 'Message/sendMessage';
+$route['getmessage'] = 'Message/getMessage';
+$route['insert'] = 'Authenticate/signupData';
+$route['search'] = 'Authenticate/loginData';
+
+//Performance routes
+$route['performance'] = 'performance';
+$route['view-performance'] = 'performance/view';
+
 //letter routes
 $route['view-letters'] = 'Letter/index';
 $route['letters/view/(:num)'] = 'Letter/view_letter/$1';
+
 
