@@ -93,6 +93,7 @@ class Request extends CI_Controller {
         $this->load->library('upload');
         $config['upload_path'] = './uploads/req-letters/';
         $config['allowed_types'] = 'pdf';
+        $config['allowed_types'] = 'png';
         $config['max_size'] = 10240; // 10MB
         $this->upload->initialize($config);
     
