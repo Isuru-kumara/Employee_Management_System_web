@@ -87,7 +87,7 @@
           </ul>
         </li>
 
-        <li class="treeview">
+        <!-- <li class="treeview">
           <a href="#">
           &nbsp;<i class="fa fa-calendar"></i>&nbsp;&nbsp; <span>Calendar</span>
             <span class="pull-right-container">
@@ -95,9 +95,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url(); ?>view-events"><i class="fa fa-circle-o"></i> Add Events</a></li>
+            <li><a href="<?php echo base_url(); ?>view-events"><i class="fa fa-circle-o"></i> view Events</a></li>
           </ul>
-        </li>
+        </li> -->
+        <li class=""><a href="<?php echo base_url(); ?>view-events">&nbsp;<i class="fa fa-calendar-plus-o"></i>&nbsp;&nbsp; <span>Calendar</span></a></li>
 
         <li class="treeview">
           <a href="#">

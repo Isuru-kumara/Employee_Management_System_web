@@ -10,6 +10,7 @@ class Message extends CI_controller{
 			$this->load->view('admin/header');
 			$this->load->view('message/message');            
             $this->load->view('admin/footer');
+			
 		}
 	}
 	public function ownerDetails(){

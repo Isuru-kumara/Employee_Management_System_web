@@ -3,7 +3,7 @@
             <div class="modal fade" id="ModalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                        <form class="form-horizontal" method="POST" action="addEvent.php">
+                        <form class="form-horizontal" method="POST" action="<?php echo base_url(); ?>addEvent">
 
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -33,7 +33,7 @@
                               <!-- <option style="color:#0071c5;" value="#0071c5">&#9724; Dark blue</option>
                                 <option style="color:#40E0D0;" value="#40E0D0">&#9724; Turquoise</option> -->							  
 	
-                                <option style="color:#40E0D0;" value="#40E0D0">&#9724; Turquoise</option> -->                        
+                                <option style="color:#40E0D0;" value="#40E0D0">&#9724; Turquoise</option>                        
                                 <option style="color:#FF0000;" value="#FF0000">&#9724; URGENT MEETING</option>
                                 <option style="color:#008000;" value="#008000">&#9724; PERSONAL SCHEDULE</option>
                                 <option style="color:#FF8C00;" value="#FF8C00">&#9724; Executives Schedule</option>
@@ -76,7 +76,7 @@
     <div class="modal fade" id="ModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form class="form-horizontal" method="POST" action="editEventTitle.php">
+                <form class="form-horizontal" method="POST" action="<?php echo base_url(); ?>editEventTitle">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="myModalLabel">Edit Schedule</h4>
