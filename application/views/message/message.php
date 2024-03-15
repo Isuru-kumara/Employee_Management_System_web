@@ -19,9 +19,9 @@ if (isset($data[0]['user_fname']) && isset($data[0]['user_lname'])) {
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>    
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <link rel="stylesheet" href="./assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -32,8 +32,9 @@ if (isset($data[0]['user_fname']) && isset($data[0]['user_lname'])) {
     <link rel="stylesheet" href="./assets/dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="./assets/dist/css/skins/_all-skins.min.css">
     <script src="./assets/bower_components/jquery/dist/jquery.min.js"></script>
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-    <link rel="stylesheet" type="text/css" href="./assets/dist/css/message/messagestyle.css">	
+	<link rel="stylesheet" type="text/css" href="./assets/dist/css/message/messagestyle.css">	
 	<title>Realtime Chat Application CI</title>
 </head>
 <body>

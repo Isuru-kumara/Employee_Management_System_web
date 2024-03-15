@@ -110,15 +110,18 @@ $route['view-events'] = 'calendar/view';
 $route['addEvent'] = 'calendar/addEvent';
 $route['editEventTitle'] = 'calendar/editEventTitle';
 
-
 //Chat routes
 $route['message'] = 'Message';
-// $route['view-chat'] = 'message/view';
+$route['view-chat'] = 'Message/view';
+// $route['default_controller'] = 'Authenticate/login';
+// $route['signup'] = 'Authenticate/signup';
+$route['404_override'] = '';
+$route['translate_uri_dashes'] = FALSE;
+$route['insert'] = 'Authenticate/signupData';
+$route['search'] = 'Authenticate/loginData';
 // $route['logout'] = 'Message/logout';
 $route['sent'] = 'Message/sendMessage';
 $route['getmessage'] = 'Message/getMessage';
-$route['insert'] = 'Authenticate/signupData';
-$route['search'] = 'Authenticate/loginData';
 
 //Performance routes
 $route['performance'] = 'performance';

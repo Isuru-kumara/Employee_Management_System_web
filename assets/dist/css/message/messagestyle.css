@@ -3,10 +3,6 @@
   margin: 0;
   padding: 0;
 }
-body {
-  overflow-x: hidden;
-  font-family: "poppins", sans-serif;
-}
 a {
   text-decoration: none;
 }
@@ -429,3 +425,5 @@ h4 {
   width: fit-content;
   margin: 15px 0px;
 }
+
+	
