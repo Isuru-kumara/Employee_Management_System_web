@@ -9,10 +9,18 @@ class Message extends CI_controller{
 		}else{
 			$this->load->view('admin/header');
 			$this->load->view('error/error');            
-            $this->load->view('admin/footer');
-			
+            $this->load->view('admin/footer');			
 		}
 	}
+
+	public function view()
+    {        
+        $data['data'] = $this->Messagemodel->ownerDetails();
+        $this->load->view('employee/header');
+        $this->load->view('message/message',$data);
+        $this->load->view('employee/footer');
+    }
+
 	public function ownerDetails(){
 		$res = $this->Messagemodel->ownerDetails();
 		print_r(json_encode($res));

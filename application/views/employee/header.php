@@ -21,6 +21,7 @@
   <script src="<?php echo base_url(); ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  
 </head>
 <body class="hold-transition skin-purple sidebar-mini">
 <div class="wrapper">
@@ -128,3 +129,27 @@
       redirect('login');
     }
   ?>
+
+</body>
+</html>
+
+<script>
+  $(document).ready(function () {
+    // Add active class to clicked list item
+    $('.sidebar-menu li').click(function () {
+      $('.sidebar-menu li').removeClass('active');
+      $(this).addClass('active');
+    });
+
+    // Check the current URL and set active class
+    var url = window.location.href;
+    $('.sidebar-menu li a').filter(function() {
+      return this.href == url;
+    }).closest('li').addClass('active');
+  });
+</script>
+
+</body>
+</html>
+
+
