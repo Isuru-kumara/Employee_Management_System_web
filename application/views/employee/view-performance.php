@@ -110,7 +110,10 @@ foreach ($attendance_data as $dept => $counts) {
         titleTextStyle: {
           fontSize: 20, // Set the font size to 18 pixels
           bold: true     // Make the title bold
-        }
+        },
+        legend: { fontFamily: "calibri",
+                  fontSize: 14
+        }  
       };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -325,15 +328,10 @@ foreach ($attendance_data as $dept => $counts) {
                     <div id="barchart" style="height: 370px; width: 100%;"></div>  <!-- Bar chart -->  
                   </div>  
                 </div>
-              </div>      
-                                  
+              </div>                                        
           </div>
         </div>
-      </div>
-      <!-- <div class="row">
-      <div id="barchart" style="height: 370px; width: 100%;"></div>  
-      
-      </div> -->
+      </div> 
     </section>
   </div>  
 </body>

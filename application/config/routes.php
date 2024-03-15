@@ -112,9 +112,8 @@ $route['editEventTitle'] = 'calendar/editEventTitle';
 
 
 //Chat routes
-
-// $route['view-chat'] = 'message/view';
 $route['message'] = 'Message';
+// $route['view-chat'] = 'message/view';
 // $route['logout'] = 'Message/logout';
 $route['sent'] = 'Message/sendMessage';
 $route['getmessage'] = 'Message/getMessage';

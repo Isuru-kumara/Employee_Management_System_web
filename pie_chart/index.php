@@ -30,12 +30,13 @@ if($con){
 
         // };
       var options = {
-      title: 'Employee by Department',
-      titleTextStyle: {
-        fontSize: 20, // Set the font size to 18 pixels
-        bold: true     // Make the title bold
-      }
-    };
+        title: 'Employee by Department',
+        titleTextStyle: {
+          fontSize: 20, // Set the font size to 18 pixels
+          bold: true     // Make the title bold
+        },
+        legend: { position: 'bottom' }  
+      };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
