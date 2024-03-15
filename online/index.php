@@ -119,12 +119,12 @@ $totalVisitors = $totalEmployees * 2; // You need to replace this with the actua
                 data: []
             };
 
-            var chart = new CanvasJS.Chart("chartContainer", newVSReturningVisitorsOptions);
+            var chart = new CanvasJS.Chart("donut", newVSReturningVisitorsOptions);
             chart.options.data = visitorsData["Employee Work Location Breakdown"];
             chart.render();
 
             function visitorsChartDrilldownHandler(e) {
-                chart = new CanvasJS.Chart("chartContainer", visitorsDrilldownedChartOptions);
+                chart = new CanvasJS.Chart("donut", visitorsDrilldownedChartOptions);
                 chart.options.data = visitorsData[e.dataPoint.name];
                 chart.options.title = {
                     text: e.dataPoint.name
@@ -135,7 +135,7 @@ $totalVisitors = $totalEmployees * 2; // You need to replace this with the actua
 
             $("#backButton").click(function () {
                 $(this).toggleClass("invisible");
-                chart = new CanvasJS.Chart("chartContainer", newVSReturningVisitorsOptions);
+                chart = new CanvasJS.Chart("donut", newVSReturningVisitorsOptions);
                 chart.options.data = visitorsData["Employee Work Location Breakdown"];
                 chart.render();
             });
@@ -163,7 +163,7 @@ $totalVisitors = $totalEmployees * 2; // You need to replace this with the actua
 </head>
 
 <body>
-    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+    <div id="donut" style="height: 370px; width: 100%;"></div>
     <button class="btn invisible" id="backButton">&lt; Back</button>
 </body>
 

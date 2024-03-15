@@ -8,7 +8,7 @@ class Message extends CI_controller{
 			$this->load->view('admin/footer');
 		}else{
 			$this->load->view('admin/header');
-			$this->load->view('message/message');            
+			$this->load->view('error/error');            
             $this->load->view('admin/footer');
 			
 		}
@@ -124,6 +124,4 @@ class Message extends CI_controller{
 		}
 	}
 }
-
-
 ?>
