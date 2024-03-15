@@ -331,7 +331,7 @@ foreach ($attendance_data as $dept => $counts) {
               </div>                                        
           </div>
         </div>
-      </div> 
+      </div>
     </section>
   </div>  
 </body>

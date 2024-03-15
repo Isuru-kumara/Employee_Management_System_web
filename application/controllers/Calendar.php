@@ -32,14 +32,21 @@ class Calendar extends CI_Controller {
         $this->load->view('admin/addEvent');
         $this->load->view('admin/footer');
     }
+    
+    public function editEventTitle()
+    {
+        $this->load->view('admin/header');
+        $this->load->view('admin/editEventTitle');
+        $this->load->view('admin/footer');
+    }
 
-    // public function editEventTitle()
-    // {
-    //     $this->load->view('admin/header');
-    //     $this->load->view('admin/editEventTitle');
-    //     $this->load->view('admin/footer');
-    // }
-
+    public function manage_department()
+    {
+        $data['content']=$this->Department_model->select_departments();
+        $this->load->view('admin/header');
+        $this->load->view('admin/manage-department',$data);
+        $this->load->view('admin/footer');
+    }
 
     public function insert()
     {

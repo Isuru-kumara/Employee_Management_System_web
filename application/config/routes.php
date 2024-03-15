@@ -108,7 +108,7 @@ $route['delete-attendance'] = 'attendance/delete';
 $route['calendar'] = 'calendar';
 $route['view-events'] = 'calendar/view';
 $route['addEvent'] = 'calendar/addEvent';
-// $route['editEventTitle'] = 'calendar/editEventTitle';
+$route['editEventTitle'] = 'calendar/editEventTitle';
 
 
 //Chat routes
