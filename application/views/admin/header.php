@@ -78,6 +78,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url(); ?>add-employee"><i class="fa fa-circle-o"></i> Add Employee</a></li>
+            <li><a href="<?php echo base_url(); ?>manage-employee"><i class="fa fa-circle-o"></i> Manage Employee</a></li>
           </ul>
         </li>
 

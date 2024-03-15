@@ -62,7 +62,7 @@
           <address>
             <strong><?php echo $cnt['employee_name']; ?></strong><br>
             <?php echo $cnt['city']; ?><br>
-            <?php echo $cnt['state']; ?>, <?php echo $cnt['country']; ?><br>
+            
             Phone: <?php echo $cnt['mobile']; ?><br>
             Email: <?php echo $cnt['email']; ?>
           </address>
