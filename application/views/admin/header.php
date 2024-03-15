@@ -16,6 +16,7 @@
   <script src="<?php echo base_url(); ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
 </head>
 <body class="hold-transition skin-purple sidebar-mini">
 <div class="wrapper">
@@ -27,15 +28,6 @@
     </a>
     <nav class="navbar navbar-static-top">
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button"></a>
-      <!-- <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-          <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-        </div>
-      </form> -->
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
@@ -163,9 +155,6 @@
 </body>
 </html>
 
-
-
-
 <script>
   $(document).ready(function () {
     // Add active class to clicked list item
@@ -173,7 +162,14 @@
       $('.sidebar-menu li').removeClass('active');
       $(this).addClass('active');
     });
+
+    // Check the current URL and set active class
+    var url = window.location.href;
+    $('.sidebar-menu li a').filter(function() {
+      return this.href == url;
+    }).closest('li').addClass('active');
   });
 </script>
 
 </body>
+</html>
